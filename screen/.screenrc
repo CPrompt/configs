@@ -1,0 +1,30 @@
+# Don't display the copyright page
+startup_message off
+
+#set default to utf8
+defutf8 on
+
+# tab-completion flash in heading bar
+vbell off
+
+term screen-256color
+
+# keep scrollback n lines
+defscrollback 1000
+
+# autostart apps
+screen	-t	vim	0	vim
+screen	-t	wayne-manor	1	bash
+screen	-t	htop	3	htop
+screen  -t	irssi	4	irssi
+
+# see if we can split the screen verticle on start
+split -v
+
+# THIS IS THE PRETTY BIT
+hardstatus	on
+hardstatus	alwayslastlinehardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+hardstatus alwayslastline '%{= M} %H%{= G} %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%m-%d-%y %{G}%C '
+
+
