@@ -27,7 +27,8 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt256c
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -149,6 +150,12 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	colors{
+		focused_workspace #4c7899 #285577 #ffffff
+		active_workspace #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		separator #4c7899
+	}
         status_command i3status
 }
 
@@ -158,3 +165,6 @@ bindsym $mod+g exec ~/.i3/load_layout.sh
 
 # set the background
 exec --no-startup-id feh --bg-fill --no-xinerama /home/curtis/Pictures/Walls/earth_from_space_dual.jpg
+
+# start up the xscreensaver
+exec xscreensaver -no-splash
