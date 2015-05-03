@@ -156,7 +156,6 @@ workspace 9 output VGA-0
 workspace 0 output DVI-0
 
 
-
 #----------------------------------------------------------------
 # Modes
 # ---------------------------------------------------------------
@@ -192,7 +191,7 @@ bindsym $mod+r mode "resize"
 # ---------------------------------------------------------------
 
 # Assign applications to specific workspace
-assign [class="Firefox"] 1
+assign [class="uzbl-tabbed"] 1
 assign [class="Thunderbird"] 1
 assign [class="URxvt" instance="screen"] 2
 assign [class="Clementine"] 4
@@ -229,8 +228,8 @@ exec xscreensaver -no-splash
 # These applications autostart and above they are set to
 # specific workspaces
 
-# start up firefox
-exec firefox
+# start up uzbl-tabbed browser
+exec uzbl-tabbed
 # start Thunderbird
 exec thunderbird
 # start urxvt256c

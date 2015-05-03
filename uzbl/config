@@ -225,7 +225,11 @@ set ebind     = @mode_bind global,-insert
 # --- Mouse bindings ---------------------------------------------------------
 
 # Middle click open in new window
-@bind  <Button2>  = sh 'if [ "$1" ]; then echo "event REQ_NEW_WINDOW $1" > "$UZBL_FIFO"; else echo "uri $(xclip -o | sed s/\\\@/%40/g)" > "$UZBL_FIFO"; fi' '\@SELECTED_URI'
+#@bind  <Button2>  = sh 'if [ "$1" ]; then echo "event REQ_NEW_WINDOW $1" > "$UZBL_FIFO"; else echo "uri $(xclip -o | sed s/\\\@/%40/g)" > "$UZBL_FIFO"; fi' '\@SELECTED_URI'
+
+@bind  <Button2>  = sh 'if [ "$1" ]; then echo "event NEW_TAB $1" > "$UZBL_FIFO"; else echo "uri $(xclip -o | sed s/\\\@/%40/g)" > "$UZBL_FIFO"; fi' '\@SELECTED_URI'
+
+
 
 # --- Keyboard bindings ------------------------------------------------------
 
@@ -285,9 +289,9 @@ set ebind     = @mode_bind global,-insert
 # Web searching binds
 @cbind  gg<Google:>_         = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
 @cbind  ddg<DuckDuckGo:>_    = uri http://duckduckgo.com/?q=%s
+@cbind  yt<YouTube:>_	     = uri http://www.youtube.com/results=?\@<encodeURIComponent(%r)>\@
 @cbind  \\awiki<Archwiki:>_  = uri http://wiki.archlinux.org/index.php/Special:Search?search=\@<encodeURIComponent(%r)>\@&go=Go
 @cbind  \\wiki<Wikipedia:>_  = uri http://en.wikipedia.org/w/index.php?title=Special:Search&search=\@<encodeURIComponent(%r)>\@&go=Go
-
 # Handy binds
 # Set function shortcut
 @cbind  s<var:>_<value:>_  = set %1 = %2
