@@ -203,11 +203,13 @@ bindsym $mod+r mode "resize"
 # ---------------------------------------------------------------
 
 # Assign applications to specific workspace
-assign [class="uzbl-tabbed"] 1
+#assign [class="uzbl-tabbed"] 1
+assign [class="Uzbl-tabbed" instance="browser"] 1
 assign [class="Thunderbird"] 1
 assign [class="URxvt" instance="screen"] 2
+assign [class="Thunar"] 3
 assign [class="Clementine"] 4
-
+assign [class="Ktorrent"] 4
 # start a terminal
 bindsym $mod+Return exec urxvt256c
 
@@ -241,10 +243,14 @@ exec xscreensaver -no-splash
 # specific workspaces
 
 # start up uzbl-tabbed browser
-exec uzbl-tabbed
+exec uzbl-tabbed --name=browser
 # start Thunderbird
 exec thunderbird
 # start urxvt256c
 exec urxvt256c -name screen
+# start Thunar
+exec Thunar
 # start clementine
 exec clementine
+# start ktorrent
+exec ktorrent

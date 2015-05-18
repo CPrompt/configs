@@ -50,11 +50,11 @@ set download_handler    = sync_spawn @scripts_dir/download.sh
 
 #   What to do when a website wants to open a new window:
 # Open link in new window
-@on_event   NEW_WINDOW     sh 'uzbl-browser ${1:+-u "$1"}' %r
+#@on_event   NEW_WINDOW     sh 'uzbl-browser ${1:+-u "$1"}' %r
 # Open in current window (also see the REQ_NEW_WINDOW event handler below)
 #@on_event   NEW_WINDOW     uri %s
 # Open in new tab. Other options are NEW_TAB_NEXT, NEW_BG_TAB and NEW_BG_TAB_NEXT.
-#@on_event   NEW_WINDOW     event NEW_TAB %s
+@on_event   NEW_WINDOW     event NEW_TAB %s
 
 #   What to do when the user requests a new window:
 # If your the NEW_WINDOW handler opens the uri in the current window, you'll
@@ -251,13 +251,15 @@ set ebind     = @mode_bind global,-insert
 @cbind  <Ctrl>b      = scroll vertical -100%
 @cbind  <<           = scroll vertical begin
 @cbind  >>           = scroll vertical end
-@cbind  <Home>       = scroll vertical begin
-@cbind  <End>        = scroll vertical end
+#@cbind  <Home>       = scroll vertical begin
+@cbind  gg           = scroll vertical begin
+#@cbind  <End>        = scroll vertical end
+@cbind  G            = scroll vertical end
 @cbind  ^            = scroll horizontal begin
 @cbind  $            = scroll horizontal end
 @cbind  <Space>      = scroll vertical end
-@cbind  G<Go To:>_   = scroll vertical %r!
-@cbind  _G<Go To:>_  = scroll horizontal %r!
+#@cbind  G<Go To:>_   = scroll vertical %r!
+#@cbind  _G<Go To:>_  = scroll horizontal %r!
 
 # Navigation binds
 @cbind  b   = back
@@ -287,7 +289,7 @@ set ebind     = @mode_bind global,-insert
 @cbind  <Ctrl>p = hardcopy
 
 # Web searching binds
-@cbind  gg<Google:>_         = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
+@cbind  \\goog<Google:>_         = uri http://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
 @cbind  ddg<DuckDuckGo:>_    = uri http://duckduckgo.com/?q=%s
 @cbind  yt<YouTube:>_	     = uri http://www.youtube.com/results=?\@<encodeURIComponent(%r)>\@
 @cbind  \\awiki<Archwiki:>_  = uri http://wiki.archlinux.org/index.php/Special:Search?search=\@<encodeURIComponent(%r)>\@&go=Go
