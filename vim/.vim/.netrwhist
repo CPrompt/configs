@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/curtis/Programming/Python/Configuration Manipulation'
-let g:netrw_dirhist_2='/home/curtis/Programming/Python/Directory and Files'
-let g:netrw_dirhist_3='/home/curtis/Programming/Python/PFE'
-let g:netrw_dirhist_4='/home/curtis/Programming/Python/PFE/Week8'
