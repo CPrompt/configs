@@ -1,12 +1,20 @@
 servers = (
-  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
-  { 
+
+  {
     address = "irc.freenode.net";
     chatnet = "Freenode";
     port = "6667";
     autoconnect = "yes";
   },
+  {
+    address = "irc.twice-irc.de";
+    chatnet = "I3WM";
+    port = "6667";
+    autoconnect = "yes";
+  },
+
+  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
+  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
   { 
     address = "irc.undernet.org";
@@ -28,10 +36,19 @@ servers = (
   { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; }
+  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
+
 );
 
 chatnets = {
+
+  Freenode = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  I3WM = { type = "IRC"; max_kicks = "1"; max_msg = "3"; max_whois = "30"; };
   IRCnet = {
     type = "IRC";
     max_kicks = "4";
@@ -43,12 +60,6 @@ chatnets = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
-    max_whois = "1";
-  };
-  Freenode = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
     max_whois = "1";
   };
   Undernet = {
@@ -103,10 +114,14 @@ chatnets = {
 };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
+  { name = "oggcastplanet"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "linuxvoice"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "i3"; chatnet = "I3WM"; autojoin = "Yes"; },
+  { name = "uzbl"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "fedora"; chatnet = "freenode"; autojoin = "No"; },
+
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
-  { name = "oggcastplanet"; chatnet = "freenode"; autojoin = "Yes";}
-  { name = "linuxvoice"; chatnet = "freenode"; autojoin = "Yes";}
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; }
 );
 
 aliases = {
@@ -278,3 +293,14 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
 };
+logs = { };
+ignores = (
+  { 
+    level = "JOINS PARTS QUITS MODES";
+    channels = ( "#xkcd-signal" );
+  },
+  { level = "JOINS QUITS"; channels = ( "#oggcastplanet" ); },
+  { level = "JOINS QUITS"; channels = ( "#linuxvoice" ); },
+  { level = "JOINS QUITS"; channels = ( "#uzbl" ); },
+  { level = "JOINS QUITS"; channels = ( "#i3" ); }
+);
