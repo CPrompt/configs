@@ -23,12 +23,7 @@ screen  -t	irssi	4	irssi
 
 # THIS IS THE PRETTY BIT
 hardstatus	on
-#hardstatus	alwayslastlinehardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
-#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 hardstatus alwayslastline '%{= m}%H %= %{= w}%-w%{+b R}[%n %t]%{-}%+w %= %{Kc}%D %m/%d/%y %{g}%C%a '
-
-#hardstatus alwayslastline '%{= M}%H %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%D %m/%d/%y %{G}%C%a '
-
 
 
 
