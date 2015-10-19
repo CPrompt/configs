@@ -18,6 +18,7 @@ screen	-t	wayne-manor	1       bash
 screen	-t	htop	2	htop
 screen  -t	cmus	3	cmus
 screen  -t	irssi	4	irssi
+
 # see if we can split the screen verticle on start
 # split -v
 
