@@ -18,7 +18,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono,font-awesomes 8
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -84,10 +84,10 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+backslash split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -204,10 +204,11 @@ bindsym $mod+r mode "resize"
 
 # Assign applications to specific workspace
 #assign [class="uzbl-tabbed"] 1
-assign [class="Uzbl-tabbed" instance="browser"] 1
+#assign [class="Uzbl-tabbed" instance="browser"] 1
+assign [class="browser" instance="Navigator"] 1
 assign [class="Thunderbird"] 1
 assign [class="URxvt" instance="screen"] 2
-assign [class="Thunar"] 3
+#assign [class="Thunar"] 3
 assign [class="Clementine"] 4
 assign [class="Ktorrent"] 4
 # start a terminal
@@ -229,7 +230,7 @@ bar {
 		inactive_workspace #333333 #222222 #888888
 		separator #4c7899
 	}
-        status_command i3status
+        status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
 }
 
 
@@ -243,14 +244,16 @@ exec xscreensaver -no-splash
 # specific workspaces
 
 # start up uzbl-tabbed browser
-exec uzbl-tabbed --name=browser
+#exec uzbl-tabbed --name=browser
+# start firefox
+exec firefox --class="browser"
 # start Thunderbird
 exec thunderbird
 # start urxvt256c
 exec urxvt256c -name screen
 # start Thunar
-exec Thunar
+#exec Thunar
 # start clementine
-exec clementine
+#exec clementine
 # start ktorrent
 exec ktorrent
