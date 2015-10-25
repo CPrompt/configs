@@ -1,0 +1,42 @@
+!------------------------------------------------------------------------------
+!! c o l o r -  s e t t i n g s
+!
+*background: #3f3f3f
+*foreground: #dcdccc
+!
+!! Default
+!! 0: black
+*color0:  #2E3436
+*color8:  #555753
+!! 1: red
+*color1:  #a40000
+*color9:  #EF2929
+!! 2: green
+*color2:  #4E9A06
+*color10: #8AE234
+!! 3: yellow
+*color3:  #C4A000
+*color11: #FCE94F
+!! 4: blue
+*color4:  #3465A4
+*color12: #729FCF
+!! 5: magenta
+*color5:  #75507B
+*color13: #AD7FA8
+!! 6: cyan
+*color6:  #cd5d00
+*color14: #fcaf3e
+!! 7: white
+*color7:  #babdb9
+*color15: #eeeeec
+!
+!!------------------------------------------------------------------------------
+!! u r x v t
+!!
+URxvt*geometry:         112x22
+!URxvt*font:             xft:terminus:size=10
+URxvt*font:		xft:Monospace-Bold:size=10
+URxvt*scrollBar:        true
+URxvt*scrollBar_right:  true
+URxvt*scrollColor:      #000000
+URxvt*intensityStyles:  false
