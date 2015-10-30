@@ -231,7 +231,15 @@ bar {
 		inactive_workspace #333333 #222222 #888888
 		separator #4c7899
 	}
-        status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
+#		status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
+#		status_command py3status -c ~/.i3status.conf
+#
+#		Begin i3pystatus config
+		status_command python3 ~/.i3/i3pystatus/config.py
+		position bottom
+		workspace_buttons yes
+#		End i3pystatus config
+
 }
 
 
@@ -260,8 +268,8 @@ exec urxvt256c -name screen
 
 #  here we are going to set workspace 4 to a horizontal layout
 #  and the fire ktorrent and keepassx
-
 exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace-4.json'"
 # start ktorrent
 exec ktorrent
+# start keepassx in lock mode
 exec keepassx -lock
