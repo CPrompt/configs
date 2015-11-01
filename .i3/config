@@ -252,7 +252,7 @@ exec xscreensaver -no-splash
 # These applications autostart and above they are set to
 # specific workspaces
 
-# start up uzbl-tabbed browser
+# start up uzbl-tabbed browse
 #exec uzbl-tabbed --name=browser
 # start firefox
 exec firefox --class="browser"

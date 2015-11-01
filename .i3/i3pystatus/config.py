@@ -6,10 +6,21 @@ status = Status(standalone=True)
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-    #format="%a %-d %b %X KW%V",)
-    format="%H:%M:%S   %m-%d-%Y",
-    color = "#5f87af",)
+    #format = [('%H:%M:%S  %m-%d-%Y','America/New_York'),('%X','Etc/GMT-5')],
+    #format = [('%H:%M:%S %P  %m-%d-%Y','America/New_York'),('%X','Etc/GMT+4')],
 
+    #format = [('%a %d %b %H:%M:%S %P'),('%X','US/Eastern')],
+    #format="%H:%M:%S   %m-%d-%Y",
+
+
+	# This is the good stuff
+    #format = "%a %d %b  %H:%M:%S %P",
+    #color = "#5f87af",)
+
+    format = "%a %d %b  %H:%M:%S %P",
+    color = "#5f87af",
+    on_leftclick = ["gsimplecal"],
+    )
 
 # Shows disk usage of /home/curtis/
 status.register("disk",
@@ -17,12 +28,16 @@ status.register("disk",
 		format = "{used}/{total}G [{avail}G]",
 		color = "#afaf87",)
 
+
+
 # Uses weather.com to get current temp
 status.register("weather",
 	location_code = "USNC0314:1:US",
 	units = "imperial",
 	colorize = "true",
 	format = "{current_temp}",)
+
+
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -38,6 +53,9 @@ status.register("network",
     color_down = "red",
     )
 
+
+status.register("pulseaudio",)
+status.register("cmus",)
 
 
 status.run()
