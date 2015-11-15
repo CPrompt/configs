@@ -47,10 +47,14 @@ class Weather(IntervalModule):
 #        "Rainy": (u"\u2614", "#CBD2C0"),
 #        "Sunny": (u"\u263C", "#FFFF00"),
 #        "Snow": (u"\u2603", "#FFFFFF"),
+#        "Fair": (u"\uf185", "#FFCC00"),
+
         "Fair": (u"\uf1be", "#FFCC00"),
         "Cloudy": (u"\uf0c2", "#ffffff"),
         "Partly Cloudy": (u"\uf0c2", "#bebebe"),  # \u26c5 is not in many fonts
+        "Mostly Cloudy": (u"\uf0c2", "#bebebe"),  # \u26c5 is not in many fonts
         "Rainy": (u"\uf0e9", "#CBD2C0"),
+        "Light Rain": (u"\uf0e9", "#CBD2C0"),
 	"Sunny": (u"\uf185", "#FFFF00"),
         "Snow": (u"\uf069", "#FFFFFF"),
         "default": ("", None),
@@ -86,6 +90,7 @@ class Weather(IntervalModule):
                 temperature=doc.findtext('head/ut'),
                 speed=doc.findtext('head/us'),
             ),
+            loc=doc.findtext('loc/dnam'),
         )
 
     @require(internet)
@@ -95,12 +100,14 @@ class Weather(IntervalModule):
         temperature = conditions["temperature"]
         humidity = conditions["humidity"]
         wind = conditions["wind"]
+        text = conditions["text"]
         units = result["units"]
         color = None
         current_temp = "{t}°{d}".format(t=temperature, d=units["temperature"])
         min_temp = "{t}°{d}".format(t=result["today"]["min_temperature"], d=units["temperature"])
         max_temp = "{t}°{d}".format(t=result["today"]["max_temperature"], d=units["temperature"])
         current_wind = "{t} {s}{d}".format(t=wind["text"], s=wind["speed"], d=units["speed"])
+        loc = result["loc"]
 
         if self.colorize:
             icon, color = self.color_icons.get(conditions["text"],
@@ -117,6 +124,8 @@ class Weather(IntervalModule):
                 humidity=humidity,
                 min_temp=min_temp,
                 max_temp=max_temp,
+                loc=loc,
+                text=text,
             ),
             "color": color
         }

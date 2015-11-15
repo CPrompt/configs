@@ -19,6 +19,10 @@ status.register("disk",
 		format = "{used}/{total}G [{avail}G]",
 		color = "#afaf87",)
 
+#status.register("moon",
+#		format = "Moon Phase : {status}",
+#		)
+
 
 # /*******	Custom function to open firefox to weather.com  ********/
 # on click, open firefox to weather.com with current detailed page
@@ -30,7 +34,7 @@ status.register("weather",
 	location_code = "USNC0314:1:US",
 	units = "imperial",
 	colorize = "true",
-	format = "{current_temp}",
+	format = "{loc}:  {text}, {current_temp}",
 	on_leftclick = open_weather,
 	)
 
@@ -38,6 +42,7 @@ status.register("weather",
 #	location_code = "USNC0314:1:US",
 #	format = "{current_temp}",
 #       )
+
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown

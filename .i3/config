@@ -245,7 +245,6 @@ bar {
 
 # set the background
 exec --no-startup-id feh --bg-fill --no-xinerama /home/curtis/Pictures/Walls/earth_from_space_dual.jpg
-
 # start up the xscreensaver
 exec xscreensaver -no-splash
 
@@ -265,6 +264,9 @@ exec urxvt256c -name screen
 # start clementine
 #exec clementine
 
+# Before, all this was in the config file
+# Seems that having i3 fire a script at startup works much faster
+#exec --no-startup-id ~/.i3/load_workspace4.sh
 
 #  here we are going to set workspace 4 to a horizontal layout
 #  and the fire ktorrent and keepassx
