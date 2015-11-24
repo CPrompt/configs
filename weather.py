@@ -55,6 +55,7 @@ class Weather(IntervalModule):
         "Mostly Cloudy": (u"\uf0c2", "#bebebe"),  # \u26c5 is not in many fonts
         "Rainy": (u"\uf0e9", "#CBD2C0"),
         "Light Rain": (u"\uf0e9", "#CBD2C0"),
+        "Showers in the Vicinity": (u"\uf0e9", "#CBD2C0"),
 	"Sunny": (u"\uf185", "#FFFF00"),
         "Snow": (u"\uf069", "#FFFFFF"),
         "default": ("", None),

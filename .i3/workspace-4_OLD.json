@@ -25,16 +25,17 @@
                        "x": 0,
                        "y": 0
                     },
-                    "name": "curtis - File Manager",
+                    "name": "Thunar",
                     "percent": 0.5,
                     "swallows": [
                        {
-                        "class": "^Thunar$"
-                       // "instance": "^thunar$",
-                       // "title": "^curtis\\ \\-\\ File\\ Manager$",
+                       //"class": "^Ktorrent$",
+                       "class": "^Thunar$"
+                       // "instance": "^ktorrent$",
+                       // "title": "^Uploads\\ \\–\\ KTorrent$",
                        // "transient_for": "^$",
-                       // "window_role": "^Thunar\\-1448363513\\-2691574482$"
-                       }
+                       // "window_role": "^MainWindow\\#1$"
+                     //  }
                     ],
                     "type": "con"
                 },
@@ -43,18 +44,19 @@
                     "current_border_width": 2,
                     "floating": "auto_off",
                     "geometry": {
-                       "height": 967,
-                       "width": 636,
-                       "x": 1920,
-                       "y": 36
+                       "height": 985,
+                       "width": 1276,
+                       "x": 1280,
+                       "y": 18
                     },
-                    "name": "KeePassX - Password Manager",
+                    "name": "KeePassX",
                     "percent": 0.5,
                     "swallows": [
                        {
-                        "class": "^Keepassx$"
+                       //"class": "^Keepassx$",
+                       "class": "^Keepassx$"
                        // "instance": "^keepassx$",
-                       // "title": "^KeePassX\\ \\-\\ Password\\ Manager$",
+                       // "title": "^\\/home\\/curtis\\/Private\\/curtadkins_database\\.kdb\\ \\-\\ KeePassX$",
                        // "transient_for": "^$"
                        }
                     ],
