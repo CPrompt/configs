@@ -10,7 +10,7 @@ status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
     format = "%a %d %b  %H:%M:%S %P",
     color = "#5f87af",
-    on_leftclick = ["gsimplecal"],
+    #on_leftclick = ["gsimplecal"],
     )
 
 # Shows disk usage of /home/curtis/
@@ -18,7 +18,6 @@ status.register("disk",
 		path="/home/curtis/",
 		format = "{used}/{total}G [{avail}G]",
 		color = "#afaf87",)
-
 #status.register("moon",
 #		format = "Moon Phase : {status}",
 #		)
@@ -37,7 +36,6 @@ status.register("weather",
 	format = "{loc}:  {text}, {current_temp}",
 	on_leftclick = open_weather,
 	)
-
 #status.register("weather_info",
 #	location_code = "USNC0314:1:US",
 #	format = "{current_temp}",
@@ -58,9 +56,8 @@ status.register("network",
     color_down = "red",
     )
 
-
-status.register("pulseaudio",)
-status.register("cmus",)
+#status.register("pulseaudio",)
+#status.register("cmus",)
 
 
 status.run()

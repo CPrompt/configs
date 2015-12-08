@@ -272,6 +272,8 @@ exec urxvt256c -name screen
 #  and the fire ktorrent and keepassx
 exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace-4.json'"
 # start ktorrent
-exec ktorrent
+#exec ktorrent
+# start Thunar
+exec thunar
 # start keepassx in lock mode
 exec keepassx -lock
