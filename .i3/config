@@ -259,21 +259,18 @@ exec firefox --class="browser"
 exec thunderbird
 # start urxvt256c
 exec urxvt256c -name screen
-# start Thunar
-#exec Thunar
 # start clementine
-#exec clementine
+exec clementine
 
 # Before, all this was in the config file
 # Seems that having i3 fire a script at startup works much faster
 #exec --no-startup-id ~/.i3/load_workspace4.sh
 
 #  here we are going to set workspace 4 to a horizontal layout
-#  and the fire ktorrent and keepassx
+#  and the fire thunar and keepassx
 exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace-4.json'"
-# start ktorrent
-#exec ktorrent
 # start Thunar
 exec thunar
 # start keepassx in lock mode
-exec keepassx -lock
+# apparently the new version of keepassx doesn't like the -lock flag
+exec keepassx

@@ -10,7 +10,7 @@ status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
     format = "%a %d %b  %H:%M:%S %P",
     color = "#5f87af",
-    #on_leftclick = ["gsimplecal"],
+    on_leftclick = ["gsimplecal"],
     )
 
 # Shows disk usage of /home/curtis/
@@ -56,8 +56,9 @@ status.register("network",
     color_down = "red",
     )
 
-#status.register("pulseaudio",)
+status.register("pulseaudio",)
 #status.register("cmus",)
 
+status.register("now_playing",)
 
 status.run()
