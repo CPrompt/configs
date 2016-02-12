@@ -14,6 +14,7 @@ My Collection of required config files
 - gnu-screen
 - irssi
 - molokai theme for vim and vim-airline
+- geany
 
 
 
