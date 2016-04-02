@@ -88,6 +88,12 @@ set smarttab		" use tabs at the start of a line, spaces elsewhere
 :command StripTrailing :%s/\s\+$//
 :command RemoveHTML    :%s#<[^>]\+>##g
 
+" "------------------------
+" " For orgmode
+" "------------------------
+filetype plugin indent on
+
+
 "  " -----------------------
 "  " Folding
 "  " -----------------------
@@ -121,8 +127,39 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = "|"
 let g:airline#extensions#tabline#right_sep = "|"
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
 "Unicode : 203A
 let g:airline_left_sep = "›"
 "Unicode 2039
 let g:airline_right_sep = "‹"
+
+"Powerline
+"let g:airline_powerline_fonts = 1
+"
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+
+" unicode
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '◀'
+
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
+
 let g:airline_theme = 'molokai'

@@ -1,17 +1,17 @@
 servers = (
 
   {
-    address = "irc.freenode.net";
+    address = "chat.freenode.net";
     chatnet = "Freenode";
     port = "6667";
     autoconnect = "yes";
   },
-  {
-    address = "irc.twice-irc.de";
-    chatnet = "I3WM";
-    port = "6667";
-    autoconnect = "yes";
-  },
+# {
+#    address = "irc.freenode.net";
+#    chatnet = "i3";
+#    port = "6667";
+#    autoconnect = "yes";
+#  },
 
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
@@ -111,12 +111,13 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
+  i3 = { type = "IRC"; };
 };
 
 channels = (
   { name = "oggcastplanet"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "linuxvoice"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "i3"; chatnet = "I3WM"; autojoin = "Yes"; },
+  { name = "i3"; chatnet = "freenode"; autojoin = "Yes"; },
   { name = "uzbl"; chatnet = "freenode"; autojoin = "No"; },
   { name = "fedora"; chatnet = "freenode"; autojoin = "No"; },
 

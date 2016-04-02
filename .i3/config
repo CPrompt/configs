@@ -230,7 +230,12 @@ bar {
 		active_workspace #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
 		separator #4c7899
-	}
+}
+#		separator_symbol ""
+#		separator_symbol ""
+		separator_symbol "|"
+# Unicode u+226B
+#		separator_symbol "》"
 #		status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
 #		status_command py3status -c ~/.i3status.conf
 #
@@ -251,16 +256,12 @@ exec xscreensaver -no-splash
 # These applications autostart and above they are set to
 # specific workspaces
 
-# start up uzbl-tabbed browse
-#exec uzbl-tabbed --name=browser
-# start firefox
-exec firefox --class="browser"
 # start Thunderbird
 exec thunderbird
+# start firefox
+exec firefox --class="browser"
 # start urxvt256c
 exec urxvt256c -name screen
-# start clementine
-exec clementine
 
 # Before, all this was in the config file
 # Seems that having i3 fire a script at startup works much faster

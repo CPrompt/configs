@@ -1,5 +1,7 @@
 from i3pystatus import Status
+from i3pystatus import get_module
 import subprocess
+
 
 status = Status(standalone=True)
 
@@ -8,7 +10,8 @@ status = Status(standalone=True)
 #                          ^-- calendar week
 status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
-    format = "%a %d %b  %H:%M:%S %P",
+    hints = {"markup": "pango"},
+    format = "<span color=\"#fff\"> :</span>%a %d %b <span color=\"#fff\">:</span>%H:%M:%S %P ",
     color = "#5f87af",
     on_leftclick = ["gsimplecal"],
     )
@@ -16,7 +19,8 @@ status.register("clock",
 # Shows disk usage of /home/curtis/
 status.register("disk",
 		path="/home/curtis/",
-		format = "{used}/{total}G [{avail}G]",
+		hints = {"markup": "pango"},
+		format = "<span color=\"#fff\">:</span> {used}/{total}G [{avail}G]",
 		color = "#afaf87",)
 #status.register("moon",
 #		format = "Moon Phase : {status}",
@@ -25,8 +29,8 @@ status.register("disk",
 
 # /*******	Custom function to open firefox to weather.com  ********/
 # on click, open firefox to weather.com with current detailed page
-def open_weather(self):
-	subprocess.call(['firefox','-url','www.weather.com/weather/today/l/USNC0314:1:US'])
+def open_weather():
+	subprocess.call(['firefox','-url','www.weather.com/weather/today/l/27265:4:US'])
 
 # Uses weather.com to get current temp
 status.register("weather",
@@ -35,7 +39,9 @@ status.register("weather",
 	colorize = "true",
 	format = "{loc}:  {text}, {current_temp}",
 	on_leftclick = open_weather,
+	log_level=40,
 	)
+
 #status.register("weather_info",
 #	location_code = "USNC0314:1:US",
 #	format = "{current_temp}",
@@ -49,16 +55,35 @@ status.register("weather",
 # (defaults of format_down and color_down)
 #
 # Note: the network module requires PyPI package netifaces
+
 status.register("network",
     interface="enp2s0",
-    format_up="{v4}",
+    hints = {"markup": "pango"},
+    format_up="<span color=\"#fff\">:</span> {v4} ",
     color_up = "#fd971f",
     color_down = "red",
     )
-
+'''
+status.register("network",
+    interface="enp2s0",
+    hints = {"markup": "pango"},
+    format_up="<span color=\"#00FF00\">{v4}</span>{bytes_recv:6.1f}KiB {bytes_sent:5.1f}KiB",
+    format_down = "",
+    dynamic_color = True,
+    start_color = "#00FF00",
+    end_color = "#FF0000",
+    color_down = "#FF0000",
+    upper_limit = 800.0,
+    )
+'''
 status.register("pulseaudio",)
-#status.register("cmus",)
-
+status.register("cmus",
+	color = '#00ff00',
+    color_not_running = '#ffffff',
+    format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
+    format_not_running = 'Not running',
+    interval = 1,
+)
 status.register("now_playing",)
 
 status.run()

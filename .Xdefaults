@@ -33,10 +33,23 @@
 !!------------------------------------------------------------------------------
 !! u r x v t
 !
-URxvt*geometry:         112x22  
-!URxvt*font:             xft:terminus:size=10
-URxvt*font:		xft:Monospace-Bold:size=10
-URxvt*scrollBar:        true 
+URxvt*geometry:         112x22
+URxvt*scrollBar:        true
 URxvt*scrollBar_right:  true
 URxvt*scrollColor:      #000000
 URxvt*intensityStyles:  false
+
+
+! Xft settings
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+
+!Fonts
+!URxvt*font:             xft:terminus:size=10
+!URxvt*font:		xft:Monospace-Bold:size=10
+URxvt*font: xft:Inconsolata\ for\ Powerline:regular:pixelsize=15,xft:Monospace-Bold:size=10
+
