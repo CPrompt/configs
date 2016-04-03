@@ -6,8 +6,6 @@ import subprocess
 status = Status(standalone=True)
 
 # Displays clock like this:
-# Tue 30 Jul 11:59:46 PM KW31
-#                          ^-- calendar week
 status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
     hints = {"markup": "pango"},
