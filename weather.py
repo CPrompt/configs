@@ -4,6 +4,9 @@ from i3pystatus.core.util import internet, require
 from urllib.request import urlopen
 import re
 import xml.etree.ElementTree as ElementTree
+#add
+import webbrowser
+LOCAL_WEATHER = 'https://www.weather.com/weather/today/l/%s'
 
 WEATHER_COM_URL = 'http://wxdata.weather.com/wxdata/weather/local/%s?unit=%s&dayf=1&cc=*'
 
@@ -39,6 +42,8 @@ class Weather(IntervalModule):
     location_code = None
     units = "metric"
     format = "{current_temp}"
+    # add
+    on_leftclick = "open_weather"
     colorize = False
     color_icons = {
     '''
@@ -94,6 +99,9 @@ class Weather(IntervalModule):
             ),
             loc=doc.findtext('loc/dnam'),
         )
+    def open_weather(self):
+       local_weather_url = LOCAL_WEATHER % (self.location_code)
+       webbrowser.open_new_tab(local_weather_url)
 
     @require(internet)
     def run(self):
