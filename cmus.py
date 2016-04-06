@@ -43,7 +43,7 @@ class Cmus(IntervalModule):
     format_not_running = 'Not running'
     interval = 1
     status = {
-	#        "paused": "▷",
+    #        "paused": "▷",
 	#        "playing": "▶",
 	#        "stopped": "◾",
 	#	Changed to useing font-awesome fonts
