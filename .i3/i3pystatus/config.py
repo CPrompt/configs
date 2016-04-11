@@ -1,6 +1,7 @@
 from i3pystatus import Status
 from i3pystatus import get_module
 from i3pystatus.weather import weathercom
+from i3pystatus.updates import dnf
 import subprocess
 
 
@@ -10,10 +11,31 @@ status = Status(standalone=True)
 status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
     hints = {"markup": "pango"},
-    format = "<span color=\"#fff\">  :</span> %a %d %b <span color=\"#fff\"> :</span>%H:%M:%S %P ",
+    format = " %a %d %b <span color=\"#fff\">  </span>  %H:%M:%S %P <span color=\"#fff\"> </span> ",
+#    format = "(' %a %d %b ', America/New_York)",
     color = "#5f87af",
     on_leftclick = ["gsimplecal"],
     )
+
+# Display updates
+'''
+status.register("updates",
+		format = "Updates: {count}",
+		format_no_updates = "No Updates",
+		backends = [dnf.Dnf],
+		log_level = 10,
+		)
+'''
+
+status.register("updates",
+                        format = "Updates: {count}",
+                        color = "#00DD00",
+                        format_no_updates = "No updates",
+                        color_no_updates = "#FFFFFF",
+						format_working = None,
+						color_working = None,						
+                        backends = [dnf.Dnf()],)
+
 
 # Shows disk usage of /home/curtis/
 status.register("disk",
@@ -28,23 +50,13 @@ status.register("disk",
 status.register("weather",
 	format='{city} : {condition} {current_temp}{temp_unit} {icon} Lo: {low_temp}',
 	colorize=True,
+	interval = 1000,
 	backend=weathercom.Weathercom(
 		location_code="USNC0314:1:US",
         units='imperial',
         ),
 )
 
-'''
-status.register("weather",
-	location_code = "USNC0314:1:US",
-	units = "imperial",
-	colorize = "true",
-	#format = "{loc}:  {text}, {current_temp}",
-	format = {current_temp}{temp_unit}[ Hi: {high_temp}[{temp_unit}]] Lo: {low_temp}{temp_unit},
-	backend = "Weather.com",
-	
-	)
-'''
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -57,7 +69,7 @@ status.register("weather",
 status.register("network",
     interface="enp2s0",
     hints = {"markup": "pango"},
-    format_up="<span color=\"#fff\"> :</span> {v4} ",	
+    format_up="<span color=\"#fff\"> :</span> {v4} ",
     color_up = "#fd971f",
     color_down = "red",
     )
