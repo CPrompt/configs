@@ -126,6 +126,8 @@ workspace_layout tabbed
 #set $WS9 9
 #set $WS0 0
 
+
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -198,6 +200,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Simulate "Show Desktop"
+bindsym $mod+x workspace 3; workspace 6
+# Show workspace 1 and 2
+bindsym $mod+Shift+x workspace 1; workspace 2
 #----------------------------------------------------------------
 # Application Settings
 # ---------------------------------------------------------------
@@ -219,7 +225,7 @@ bindsym $mod+Return exec urxvt256c
 bindsym $mod+d exec /home/curtis/.i3/dmenu_launch
 
 #--------------------------------------------------------------------------------------
-# Autostart settings
+# Autostart settings for monitor 1
 #--------------------------------------------------------------------------------------
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -231,7 +237,7 @@ bar {
 		inactive_workspace #333333 #222222 #888888
 # 		separator #4c7899
 		separator #262626
-}
+	}
 #		separator_symbol ""
 #		separator_symbol ""
 		separator_symbol "|"
@@ -241,16 +247,47 @@ bar {
 #		status_command py3status -c ~/.i3status.conf
 #
 #		Begin i3pystatus config
-		status_command python3 ~/.i3/i3pystatus/config.py
+		status_command python3 ~/.i3/i3pystatus/config_monitor1.py
 		position bottom
 		workspace_buttons yes
+		output VGA-0
+#		End i3pystatus config
+}
+#--------------------------------------------------------------------------------------
+# Autostart settings for monitor 2
+#--------------------------------------------------------------------------------------
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	colors{
+		focused_workspace #4c7899 #285577 #ffffff
+		active_workspace #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+# 		separator #4c7899
+		separator #262626
+	}
+#		separator_symbol ""
+#		separator_symbol ""
+		separator_symbol "|"
+# Unicode u+226B
+#		separator_symbol "》"
+#		status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
+#		status_command py3status -c ~/.i3status.conf
+#
+#		Begin i3pystatus config
+		status_command python3 ~/.i3/i3pystatus/config_monitor2.py
+		position bottom
+		workspace_buttons yes
+		output DVI-0
 #		End i3pystatus config
 
 }
 
 
 # set the background
-exec --no-startup-id feh --bg-fill --no-xinerama /home/curtis/Pictures/Walls/earth_from_space_dual.jpg
+#exec --no-startup-id feh --bg-fill --no-xinerama /home/curtis/Pictures/Walls/earth_from_space_dual.jpg
+exec --no-startup-id feh --bg-fill --no-xinerama /home/curtis/Pictures/Walls/46-valentino-rossi_gp_3803.gallery_full_top_fullscreen.jpg
 # start up the xscreensaver
 exec xscreensaver -no-splash
 

@@ -47,15 +47,15 @@ status.register("disk",
 
 # Uses weather.com to get current temp
 
-status.register("weather",
-	format='{city} : {condition} {current_temp}{temp_unit} {icon} Lo: {low_temp}',
-	colorize=True,
-	interval = 1000,
-	backend=weathercom.Weathercom(
-		location_code="USNC0314:1:US",
-        units='imperial',
-        ),
-)
+#status.register("weather",
+#	format='{city} : {condition} {current_temp}{temp_unit} {icon} Lo: {low_temp}',
+#	colorize=True,
+#	interval = 1000,
+#	backend=weathercom.Weathercom(
+#		location_code="USNC0314:1:US",
+#       units='imperial',
+#        ),
+#)
 
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
@@ -74,18 +74,18 @@ status.register("network",
     color_down = "red",
     )
 
-status.register("pulseaudio",
+#status.register("pulseaudio",
 # font-awesome f028
-	format = ' : {volume}',)
+#	format = ' : {volume}',)
 
 
-status.register("cmus",
-	color = '#00ff00',
-    color_not_running = '#ffffff',
-    format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
-    format_not_running = 'Not running',
-    interval = 1,
-)
-status.register("now_playing",)
+#status.register("cmus",
+#    color = '#00ff00',
+#    color_not_running = '#ffffff',
+#    format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
+#    format_not_running = 'Not running',
+#    interval = 1,
+#)
+#status.register("now_playing",)
 
 status.run()

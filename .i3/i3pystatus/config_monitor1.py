@@ -8,14 +8,14 @@ import subprocess
 status = Status(standalone=True)
 
 # Displays clock like this:
-status.register("clock",
+#status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
-    hints = {"markup": "pango"},
-    format = " %a %d %b <span color=\"#fff\">  </span>  %H:%M:%S %P <span color=\"#fff\"> </span> ",
+#    hints = {"markup": "pango"},
+#    format = " %a %d %b <span color=\"#fff\">  </span>  %H:%M:%S %P <span color=\"#fff\"> </span> ",
 #    format = "(' %a %d %b ', America/New_York)",
-    color = "#5f87af",
-    on_leftclick = ["gsimplecal"],
-    )
+#    color = "#5f87af",
+#    on_leftclick = ["gsimplecal"],
+#    )
 
 # Display updates
 '''
@@ -27,22 +27,22 @@ status.register("updates",
 		)
 '''
 
-status.register("updates",
-                        format = "Updates: {count}",
-                        color = "#00DD00",
-                        format_no_updates = "No updates",
-                        color_no_updates = "#FFFFFF",
-						format_working = None,
-						color_working = None,
-                        backends = [dnf.Dnf()],)
+#status.register("updates",
+#                        format = "Updates: {count}",
+#                        color = "#00DD00",
+#                        format_no_updates = "No updates",
+#                        color_no_updates = "#FFFFFF",
+#						format_working = None,
+#						color_working = None,
+#                        backends = [dnf.Dnf()],)
 
 
 # Shows disk usage of /home/curtis/
-status.register("disk",
-		path="/home/curtis/",
-		hints = {"markup": "pango"},
-		format = "<span color=\"#fff\"> :</span> {used}/{total}G [{avail}G]",
-		color = "#afaf87",)
+#status.register("disk",
+#		path="/home/curtis/",
+#		hints = {"markup": "pango"},
+#		format = "<span color=\"#fff\"> :</span> {used}/{total}G [{avail}G]",
+#		color = "#afaf87",)
 
 
 # Uses weather.com to get current temp
@@ -66,13 +66,13 @@ status.register("weather",
 #
 # Note: the network module requires PyPI package netifaces
 
-status.register("network",
-    interface="enp2s0",
-    hints = {"markup": "pango"},
-    format_up="<span color=\"#fff\"> :</span> {v4} ",
-    color_up = "#fd971f",
-    color_down = "red",
-    )
+#status.register("network",
+#    interface="enp2s0",
+#    hints = {"markup": "pango"},
+#    format_up="<span color=\"#fff\"> :</span> {v4} ",
+#    color_up = "#fd971f",
+#    color_down = "red",
+#    )
 
 status.register("pulseaudio",
 # font-awesome f028
@@ -85,7 +85,7 @@ status.register("cmus",
     format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
     format_not_running = 'Not running',
     interval = 1,
-)
+    )
 status.register("now_playing",)
 
 status.run()

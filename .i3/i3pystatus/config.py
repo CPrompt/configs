@@ -33,7 +33,7 @@ status.register("updates",
                         format_no_updates = "No updates",
                         color_no_updates = "#FFFFFF",
 						format_working = None,
-						color_working = None,						
+						color_working = None,
                         backends = [dnf.Dnf()],)
 
 
