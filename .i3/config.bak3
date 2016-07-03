@@ -243,10 +243,17 @@ bar {
 		focused_workspace #4c7899 #285577 #ffffff
 		active_workspace #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
+# 		separator #4c7899
 		separator #262626
 	}
+#		separator_symbol ""
+#		separator_symbol ""
 		separator_symbol "|"
-		
+# Unicode u+226B
+#		separator_symbol "》"
+#		status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
+#		status_command py3status -c ~/.i3status.conf
+#
 #		Begin i3pystatus config
 		status_command python3 ~/.i3/i3pystatus/config_monitor1.py		
 		position bottom

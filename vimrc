@@ -59,10 +59,15 @@ set novisualbell	" don't blink
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04v][%p%%]\ [LEN=%L]
 set laststatus=2	" always show the status line
 set t_Co=256
+
+colorscheme gruvbox
+set background=dark
 "colorscheme zellner
-colorscheme distinguished
+"colorscheme distinguished
 "colorscheme slate
 "colorscheme lumberjack
+"
+"
 " -----------------------
 "  " Text Formatting
 "  " -----------------------
@@ -162,4 +167,5 @@ let g:airline_right_sep = "‹"
 "let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = ''
 
-let g:airline_theme = 'molokai'
+"let g:airline_theme = 'molokai'
+let g:airline_theme = 'gruvbox'

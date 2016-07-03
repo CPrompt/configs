@@ -1,6 +1,5 @@
 from i3pystatus import Status
 from i3pystatus import get_module
-from i3pystatus.weather import weathercom
 from i3pystatus.updates import dnf
 import subprocess
 
@@ -18,14 +17,6 @@ status.register("clock",
     )
 
 # Display updates
-'''
-status.register("updates",
-		format = "Updates: {count}",
-		format_no_updates = "No Updates",
-		backends = [dnf.Dnf],
-		log_level = 10,
-		)
-'''
 
 status.register("updates",
                         format = "Updates: {count}",
@@ -36,7 +27,6 @@ status.register("updates",
 						color_working = None,
                         backends = [dnf.Dnf()],)
 
-
 # Shows disk usage of /home/curtis/
 status.register("disk",
 		path="/home/curtis/",
@@ -45,17 +35,14 @@ status.register("disk",
 		color = "#afaf87",)
 
 
-# Uses weather.com to get current temp
 
-#status.register("weather",
-#	format='{city} : {condition} {current_temp}{temp_unit} {icon} Lo: {low_temp}',
-#	colorize=True,
-#	interval = 1000,
-#	backend=weathercom.Weathercom(
-#		location_code="USNC0314:1:US",
-#       units='imperial',
-#        ),
-#)
+# Shows internet connection status
+status.register("online",
+    format_online = '',
+    color = '#00DD00',
+    format_offline = '',
+    color_offline = '#FF0000',
+        )
 
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
@@ -74,18 +61,6 @@ status.register("network",
     color_down = "red",
     )
 
-#status.register("pulseaudio",
-# font-awesome f028
-#	format = ' : {volume}',)
 
-
-#status.register("cmus",
-#    color = '#00ff00',
-#    color_not_running = '#ffffff',
-#    format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
-#    format_not_running = 'Not running',
-#    interval = 1,
-#)
-#status.register("now_playing",)
 
 status.run()
