@@ -12,19 +12,21 @@ status.register("clock",
     hints = {"markup": "pango"},
     format = " %a %d %b <span color=\"#fff\">  </span>  %H:%M:%S %P <span color=\"#fff\"> </span> ",
 #    format = "(' %a %d %b ', America/New_York)",
-    color = "#5f87af",
-    on_leftclick = ["gsimplecal"],
-    )
+    color = "#b16286",
+    #color = "#5f87af",
+    on_leftclick = ["gsimplecal"],)
 
 # Display updates
 
 status.register("updates",
                         format = "Updates: {count}",
-                        color = "#00DD00",
+                        color = "#689d6a",
+                        #color = "#00DD00",
                         format_no_updates = "No updates",
-                        color_no_updates = "#FFFFFF",
-						format_working = None,
-						color_working = None,
+                        color_no_updates = "#ebdbb2",
+                        #color_no_updates = "#FFFFFF",
+			format_working = None,
+			color_working = None,
                         backends = [dnf.Dnf()],)
 
 # Shows disk usage of /home/curtis/
@@ -32,17 +34,18 @@ status.register("disk",
 		path="/home/curtis/",
 		hints = {"markup": "pango"},
 		format = "<span color=\"#fff\"> :</span> {used}/{total}G [{avail}G]",
-		color = "#afaf87",)
+		color = "#d79921",)
+		#color = "#afaf87",)
 
 
 
 # Shows internet connection status
 status.register("online",
     format_online = '',
-    color = '#00DD00',
+    color = '#98971a',
+    #color = '#00DD00',
     format_offline = '',
-    color_offline = '#FF0000',
-        )
+    color_offline = '#FF0000',)
 
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
@@ -57,9 +60,9 @@ status.register("network",
     interface="enp2s0",
     hints = {"markup": "pango"},
     format_up="<span color=\"#fff\"> :</span> {v4} ",
-    color_up = "#fd971f",
-    color_down = "red",
-    )
+    color_up = "#98971a",
+    #color_up = "#fd971f",
+    color_down = "red",)
 
 
 

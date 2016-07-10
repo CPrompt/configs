@@ -4,6 +4,7 @@ from i3pystatus.weather import weathercom
 
 import subprocess
 
+color_teal = "#458588"
 
 status = Status(standalone=True)
 
@@ -21,18 +22,27 @@ status.register("weather",
 )
 
 status.register("pulseaudio",
-# font-awesome f028
+        color_unmuted = "#458588",
 	format = ' : {volume}',)
-
-
+'''
 status.register("cmus",
-	color = '#00ff00',
-    color_not_running = '#ffffff',
+    color = '#458588',
+    #color = '#00ff00',
+    color_not_running = '#ebdbb2',
+    #color_not_running = '#ffffff',
     format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
     format_not_running = 'Not running',
     interval = 1,
     )
 
-#status.register("now_playing",)
+status.register("now_playing",)
+'''
+
+status.register("mpd",
+        #color = '#458588',
+        color = color_teal,
+	status = {"pause": "","play": "","stop": "",},
+        format = '{status} {song_elapsed}/{len} {artist} - {title}',
+        )
 
 status.run()

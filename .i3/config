@@ -240,15 +240,16 @@ bindsym Menu exec ~/.i3/dmenu_launch
 # finds out, if available)
 bar {
 	colors{
-		focused_workspace #4c7899 #285577 #ffffff
+		background #282828
+		focused_workspace #076678 #285577 #ffffff
 		active_workspace #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
 		separator #262626
 	}
 		separator_symbol "|"
-		
+
 #		Begin i3pystatus config
-		status_command python3 ~/.i3/i3pystatus/config_monitor1.py		
+		status_command python3 ~/.i3/i3pystatus/config_monitor1.py
 		position bottom
 		workspace_buttons yes
 		output VGA-0
@@ -262,7 +263,8 @@ bar {
 # finds out, if available)
 bar {
 	colors{
-		focused_workspace #4c7899 #285577 #ffffff
+		background #282828
+		focused_workspace #076678 #285577 #ffffff
 		active_workspace #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
 # 		separator #4c7899

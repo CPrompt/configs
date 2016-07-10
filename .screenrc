@@ -26,7 +26,8 @@ screen  -t	irssi	4	irssi
 
 # THIS IS THE PRETTY BIT
 hardstatus	on
-hardstatus alwayslastline '%{= m}%H %= %{= w}%-w%{+b R}[%n %t]%{-}%+w %= %{Kc}%D %m/%d/%y %{g}%C%a '
+# hardstatus alwayslastline '%{= m}%H %= %{= w}%-w%{+b R}[%n %t]%{-}%+w %= %{Kc}%D %m/%d/%y %{g}%C%a '
+hardstatus alwayslastline '%{= m}%H %= %{= w}%-w%{+b R}[%n %t]%{-}%+w %= %{c}%D %m/%d/%y %{g}%C%a '
 
 
 
