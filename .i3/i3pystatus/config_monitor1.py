@@ -14,6 +14,16 @@ status = Status(standalone=True)
 status.register("weather",
 	format='{city} : {condition} {current_temp}{temp_unit} {icon} Lo: {low_temp}',
 	colorize=True,
+	color_icons = {
+        'Fair': (u'\u263c', '#ffcc00'),
+        'Cloudy': (u'\u2601', '#f8f8ff'),
+        'Partly Cloudy': (u'\u2601', '#f8f8ff'),  # \u26c5 is not in many fonts
+        'Rainy': (u'\u26c8', '#cbd2c0'),
+        'Thunderstorm': (u'\u03de', '#cbd2c0'),
+        'Sunny': (u'\u2600', '#ffff00'),
+        'Snow': (u'\u2603', '#ffffff'),
+        'default': ('', None),
+    },
 	interval = 1000,
 	backend=weathercom.Weathercom(
 		location_code="USNC0314:1:US",
