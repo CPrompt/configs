@@ -4,10 +4,11 @@ from i3pystatus.weather import weathercom
 
 import subprocess
 
+from colors import *
+
 status = Status(standalone=True)
 
 # Uses weather.com to get current temp
-
 status.register("weather",
         format='{city} : Right Now: {condition} {current_temp}{temp_unit} {icon}   Hi: {high_temp} Lo: {low_temp}',
 	colorize=True,
@@ -29,14 +30,15 @@ status.register("weather",
 )
 
 status.register("pulseaudio",
-        color_unmuted = "#458588",
+        color_unmuted = pulse_audio,
 	format = ' : {volume}',)
 
 status.register("cmus",
-    color = '#458588',
+#   color = "#458588",
     #color = '#00ff00',
-    color_not_running = '#ebdbb2',
-    #color_not_running = '#ffffff',
+    color = cmus_color,
+#   color_not_running = '#ebdbb2',
+    color_not_running = cmus_not_running,
     format = '{status} {song_elapsed}/{song_length} {artist} - {title}',
     format_not_running = 'Not running',
     status = {

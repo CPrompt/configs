@@ -95,7 +95,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle
+bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -111,6 +112,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
+
 
 #----------------------------------------------------------------
 # Workspaces
@@ -212,20 +214,17 @@ bindsym $mod+x workspace 3; workspace 6
 bindsym $mod+Shift+x workspace 1; workspace 2
 # go to the GIMP
 bindsym $mod+g workspace 3; exec gimp
+
 #----------------------------------------------------------------
 # Application Settings
 # ---------------------------------------------------------------
 
 # Assign applications to specific workspace
-#assign [class="uzbl-tabbed"] 1
-#assign [class="Uzbl-tabbed" instance="browser"] 1
-assign [class="browser" instance="Navigator"] 1
 assign [class="Thunderbird"] 1
+assign [class="browser" instance="Navigator"] 1
 assign [class="URxvt" instance="screen"] 2
 #assign [class="Thunar"] 3
-#assign [class="Clementine"] 4
-#assign [class="Ktorrent"] 4
-#assign [class="keepassx"] 4
+
 # start a terminal
 bindsym $mod+Return exec urxvt256c
 
@@ -303,7 +302,6 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 
 # These applications autostart and above they are set to
 # specific workspaces
-
 # start Thunderbird
 exec thunderbird
 # start firefox
@@ -319,13 +317,8 @@ exec urxvt256c -name screen
 #  and the fire thunar and keepassx
 #exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace-4.json'"
 
-
-# Now move them to the scratchpad
-for_window [class="^Thunar$"] move scratchpad
+# Move them to the scratchpad
 for_window [class="^Keepassx$"] move scratchpad
-# start Thunar
-exec --no-startup-id thunar
 # start keepassx in lock mode
-# apparently the new version of keepassx doesn't like the -lock flag
 exec --no-startup-id keepassx
 

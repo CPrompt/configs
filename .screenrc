@@ -14,7 +14,8 @@ defscrollback 1000
 
 # autostart apps
 screen	-t	vim	0	vim
-screen	-t	xonsh	1	xonsh
+#screen	-t	xonsh	1	xonsh
+screen	-t	bash	1       bash	
 screen	-t	htop	2	htop
 screen  -t	cmus	3	cmus
 screen  -t	irssi	4	irssi
