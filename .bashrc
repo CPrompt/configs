@@ -62,7 +62,7 @@ match_lhs=""
 	&& match_lhs=$(dircolors --print-database)
 
 if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
-	
+
 	# we have colors :-)
 
 	# Enable colors for ls, etc. Prefer ~/.dir_colors
@@ -120,3 +120,6 @@ alias pyback='python /home/curtis/Scripts/PyBackup/PyBackup.py'
 
 # run cd and clear together
 alias cdclear='cd && clear'
+
+# sync .files for git
+alias gitSync='python ~/Scripts/gitSync/gitSync.py'
