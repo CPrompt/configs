@@ -122,18 +122,7 @@ bindsym $mod+minus scratchpad show
 workspace_layout tabbed
 
 # give the workspaces name instead of just numbers
-#set $WS1 1 www
-#set $WS2 2 cli
-#set $WS3 3 gimp
-#set $WS4 4
-#set $WS5 5
-#set $WS6 6
-#set $WS7 7
-#set $WS8 8
-#set $WS9 9
-#set $WS0 0
-
-
+#set $WS1 "1:www"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -290,7 +279,11 @@ bar {
 
 # set the background
 #exec --no-startup-id feh --bg-fill --no-xinerama /home/curtis/Pictures/Walls/earth_from_space_dual.jpg
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-rossi_gp_3803.gallery_full_top_fullscreen.jpg
+#exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-rossi_gp_3803.gallery_full_top_fullscreen.jpg
+#exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies.png
+exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies_universe-today.jpg
+
+
 # start up the xscreensaver
 exec xscreensaver -no-splash
 

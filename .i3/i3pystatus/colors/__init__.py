@@ -11,9 +11,10 @@ objColor = Colors()
 
 # Theme file
 objColor.read_json('gruvbox.json')
+#objColor.read_json('distinguished.json')
 
 # Theme vars
-# Shouldn't have to change these.  Just make sure they 
+# Shouldn't have to change these.  Just make sure they
 #	are declared correctly in your theme file
 cmus_color = objColor.get_key_value('cmus_color')
 cmus_not_running = objColor.get_key_value('cmus_not_running')
