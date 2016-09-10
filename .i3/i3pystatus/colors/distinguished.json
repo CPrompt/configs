@@ -1,0 +1,13 @@
+{
+		"cmus_color" : "#00ffff",
+		"cmus_not_running" : "#5f8787",
+		"pulse_audio" : "#af875f",
+		"color_clock" : "#afd7a7",
+		"updates" : "#ffff87",
+		"color_no_updates" : "#d7d787",
+		"color_disk" : "#875f00",
+		"color_online" : "#ff8700",
+		"color_offline" : "#d70000",
+		"color_network_up" : "#ff8700",
+		"color_network_down" : "ff8700"
+}
