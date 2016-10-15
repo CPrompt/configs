@@ -73,4 +73,5 @@ status.register("cmus",
     interval = 1,
 )
 
+
 status.run()

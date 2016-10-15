@@ -12,7 +12,7 @@ from colors import *
 status.register("clock",
 #  Note: this config requires the gsimplecal package to be installed
     hints = {"markup": "pango"},
-    format = " %a %d %b <span color=\"#fff\">  </span>  %H:%M:%S %P <span color=\"#fff\"> </span> ",
+    format = " %a %d %b <span color=\"#ebdbb2\">  </span>  %H:%M:%S %P <span color=\"#ebdbb2\"> </span> ",
 #    format = "(' %a %d %b ', America/New_York)",
     #color = "#b16286",
     #color = "#5f87af",
@@ -38,7 +38,7 @@ status.register("updates",
 status.register("disk",
 		path="/home/curtis/",
 		hints = {"markup": "pango"},
-		format = "<span color=\"#fff\"> :</span> {used}/{total}G [{avail}G]",
+		format = "<span color=\"#ebdbb2\"> :</span> {used}/{total}G [{avail}G]",
 		#color = "#d79921",)
 		#color = "#afaf87",)
                 color = color_disk,)
@@ -67,12 +67,13 @@ status.register("online",
 status.register("network",
     interface="enp2s0",
     hints = {"markup": "pango"},
-    format_up="<span color=\"#fff\"> :</span> {v4} ",
+    format_up="<span color=\"#ebdbb2\"> :</span> {v4} ",
     #color_up = "#98971a",
     #color_up = "#fd971f",
     #color_down = "red",)
     color_up = color_network_up,
-    color_down = color_network_down,)
+    color_down = color_network_down,
+    )
 
 
 

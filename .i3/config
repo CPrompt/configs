@@ -212,14 +212,15 @@ bindsym $mod+g workspace 3; exec gimp
 assign [class="Thunderbird"] 1
 assign [class="browser" instance="Navigator"] 1
 assign [class="URxvt" instance="screen"] 2
+assign [class="Google-chrome" instance="google-chrome"] 1
 #assign [class="Thunar"] 3
 
 # start a terminal
 bindsym $mod+Return exec urxvt256c
 
 # start dmenu with custom color settings
-# bindsym $mod+d exec ~/.i3/dmenu_launch
-bindsym Menu exec ~/.i3/dmenu_launch
+bindsym $mod+d exec ~/.i3/dmenu_launch
+#bindsym Menu exec ~/.i3/dmenu_launch
 
 #--------------------------------------------------------------------------------------
 # Autostart settings for monitor 1
@@ -295,10 +296,16 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 
 # These applications autostart and above they are set to
 # specific workspaces
+
+# Workspace 1 applications
+# start firefox
+#exec firefox --class="browser"
+# start google-chrome
+exec google-chrome --class="Google-chrome"
 # start Thunderbird
 exec thunderbird
-# start firefox
-exec firefox --class="browser"
+
+# Workspace 2 applications
 # start urxvt256c
 exec urxvt256c -name screen
 
