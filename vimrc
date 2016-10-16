@@ -102,11 +102,11 @@ filetype plugin indent on
 "  " -----------------------
 "  " Folding
 "  " -----------------------
-"set foldenable		" Turn on folding
-"set foldmethod=indent	" Make folding indent sensitive
-"set foldlevel=100	" Don't autofold anything
-"set foldopen-=search	" don't open folds when you search into them
-"set foldopen-=undo	" don't open folds when you undo stuff
+set foldenable		" Turn on folding
+set foldmethod=indent	" Make folding indent sensitive
+set foldlevel=100	" Don't autofold anything
+set foldopen-=search	" don't open folds when you search into them
+set foldopen-=undo	" don't open folds when you undo stuff
 "
 " ------------------------------------
 "  pathogen
@@ -169,3 +169,6 @@ let g:airline_right_sep = "‹"
 
 "let g:airline_theme = 'molokai'
 let g:airline_theme = 'gruvbox'
+
+"SimpylFold
+let g:SimpylFold_docstring_preview = 1

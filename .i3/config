@@ -317,8 +317,21 @@ exec urxvt256c -name screen
 #  and the fire thunar and keepassx
 #exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace-4.json'"
 
+#--------------  KEEPASSX ------------------------
 # Move them to the scratchpad
-for_window [class="^Keepassx$"] move scratchpad
+#for_window [class="^Keepassx$"] move scratchpad
 # start keepassx in lock mode
+#exec --no-startup-id keepassx
+#
+#------------- Keeepassx scratchpad --------------------------
+# This binds mod+shift+alt+1 to show keepass
+bindsym $mod+Shift+Mod1+1 [con_mark="secret"] scratchpad show
+for_window [class="Keepassx$"] mark "secret", move scratchpad
 exec --no-startup-id keepassx
+
+#-------------- Thunar scratchpad ---------------------------
+# This binds only one instance of Thunar to the scratchpad
+bindsym $mod+Shift+Mod1+2 [con_mark="files"] scratchpad show
+for_window [class="files"] mark "files", move scratchpad
+exec --no-startup-id thunar --class=files
 
