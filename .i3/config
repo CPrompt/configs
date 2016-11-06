@@ -33,7 +33,6 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-
 #-------------------------------------------------------------------------------
 # Manage Windows
 #-------------------------------------------------------------------------------
@@ -45,16 +44,11 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
 # Make the focus like VIM
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -63,10 +57,6 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+semicolon move right
 # make the move keys like VIM
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -80,7 +70,6 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+h split h
 bindsym $mod+Shift+backslash split h
 
 # split in vertical orientation
@@ -95,7 +84,6 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-#bindsym $mod+Shift+space floating toggle
 bindsym $mod+t floating toggle
 
 # change focus between tiling / floating windows
@@ -113,16 +101,12 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-
 #----------------------------------------------------------------
 # Workspaces
 # ---------------------------------------------------------------
 
 # set default workspace layout to tabbed
 workspace_layout tabbed
-
-# give the workspaces name instead of just numbers
-#set $WS1 "1:www"
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -148,7 +132,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 0
 
-
 #---------------------------------------------------------------------
 # Window Properties
 # --------------------------------------------------------------------
@@ -164,7 +147,6 @@ workspace 7 output VGA-0
 workspace 8 output DVI-0
 workspace 9 output VGA-0
 workspace 0 output DVI-0
-
 
 #----------------------------------------------------------------
 # Modes
@@ -196,7 +178,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # Simulate "Show Desktop"
 bindsym $mod+x workspace 3; workspace 6
 # Show workspace 1 and 2
@@ -213,14 +194,12 @@ assign [class="Thunderbird"] 1
 assign [class="browser" instance="Navigator"] 1
 assign [class="URxvt" instance="screen"] 2
 assign [class="Google-chrome" instance="google-chrome"] 1
-#assign [class="Thunar"] 3
 
 # start a terminal
 bindsym $mod+Return exec urxvt256c
 
 # start dmenu with custom color settings
 bindsym $mod+d exec ~/.i3/dmenu_launch
-#bindsym Menu exec ~/.i3/dmenu_launch
 
 #--------------------------------------------------------------------------------------
 # Autostart settings for monitor 1
@@ -257,17 +236,9 @@ bar {
 		focused_workspace #076678 #285577 #ffffff
 		active_workspace #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
-# 		separator #4c7899
 		separator #262626
 	}
-#		separator_symbol ""
-#		separator_symbol ""
 		separator_symbol "|"
-# Unicode u+226B
-#		separator_symbol "》"
-#		status_command i3status | /home/curtis/.i3/plugins/i3-weather/weather.py --wrap-i3-status 2421250
-#		status_command py3status -c ~/.i3status.conf
-#
 #		Begin i3pystatus config
 		status_command python3 ~/.i3/i3pystatus/config_monitor2.py
 		position bottom
@@ -284,7 +255,6 @@ bar {
 #exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies.png
 exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies_universe-today.jpg
 
-
 # start up the xscreensaver
 exec xscreensaver -no-splash
 
@@ -293,13 +263,10 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 # set i3 to use a right handed mouse
 #exec --no-startup-id "xmodmap -e 'pointer = 1 2 3'"
 
-
 # These applications autostart and above they are set to
 # specific workspaces
 
 # Workspace 1 applications
-# start firefox
-#exec firefox --class="browser"
 # start google-chrome
 exec google-chrome --class="Google-chrome"
 # start Thunderbird
@@ -309,20 +276,6 @@ exec thunderbird
 # start urxvt256c
 exec urxvt256c -name screen
 
-# Before, all this was in the config file
-# Seems that having i3 fire a script at startup works much faster
-#exec --no-startup-id ~/.i3/load_workspace4.sh
-
-#  here we are going to set workspace 4 to a horizontal layout
-#  and the fire thunar and keepassx
-#exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.i3/workspace-4.json'"
-
-#--------------  KEEPASSX ------------------------
-# Move them to the scratchpad
-#for_window [class="^Keepassx$"] move scratchpad
-# start keepassx in lock mode
-#exec --no-startup-id keepassx
-#
 #------------- Keeepassx scratchpad --------------------------
 # This binds mod+shift+alt+1 to show keepass
 bindsym $mod+Shift+Mod1+1 [con_mark="secret"] scratchpad show

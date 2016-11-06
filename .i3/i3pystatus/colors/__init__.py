@@ -10,6 +10,7 @@ from colors.color_changer import *
 objColor = Colors()
 
 # Theme file
+#objColor.read_json('solaris.json')
 objColor.read_json('gruvbox.json')
 #objColor.read_json('distinguished.json')
 
