@@ -1,0 +1,69 @@
+// vim:ts=4:sw=4:et
+{
+    // tabbed split container with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith",
+            "percent": null,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 985,
+                       "width": 1276,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Thunar",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       //"class": "^Ktorrent$",
+                       "class": "^Thunar$"
+                       // "instance": "^ktorrent$",
+                       // "title": "^Uploads\\ \\–\\ KTorrent$",
+                       // "transient_for": "^$",
+                       // "window_role": "^MainWindow\\#1$"
+                     //  }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 985,
+                       "width": 1276,
+                       "x": 1280,
+                       "y": 18
+                    },
+                    "name": "KeePassX",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                       //"class": "^Keepassx$",
+                       "class": "^Keepassx$"
+                       // "instance": "^keepassx$",
+                       // "title": "^\\/home\\/curtis\\/Private\\/curtadkins_database\\.kdb\\ \\-\\ KeePassX$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
