@@ -7,7 +7,8 @@ defutf8 on
 # tab-completion flash in heading bar
 vbell off
 
-term screen-256color
+#term screen-256color
+term rxvt-unicode-256color
 
 # keep scrollback n lines
 defscrollback 1000
@@ -15,7 +16,7 @@ defscrollback 1000
 # autostart apps
 screen	-t	vim	0	vim
 #screen	-t	xonsh	1	xonsh
-screen	-t	bash	1       bash	
+screen	-t	bash	1       bash
 screen	-t	htop	2	htop
 screen  -t	cmus	3	cmus
 screen  -t	irssi	4	irssi

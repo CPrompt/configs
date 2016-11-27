@@ -103,6 +103,9 @@ PS2="> "
 PS3="> "
 PS4="+ "
 
+# force colors
+force_color_prompt=yes
+
 # Try to keep environment pollution down, EPA loves us.
 unset safe_term match_lhs
 
@@ -116,7 +119,8 @@ unset safe_term match_lhs
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias pyback='python /home/curtis/Scripts/PyBackup/PyBackup.py'
+#alias pyback='python /home/curtis/Scripts/PyBackup/PyBackup.py'
+alias dback='python3 /home/curtis/Scripts/DiamondBack/DiamondBack.py'
 
 # run cd and clear together
 alias cdclear='cd && clear'
