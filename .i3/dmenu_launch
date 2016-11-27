@@ -1,4 +1,0 @@
-#!/bin/bash
-#dmenu_run -i -b -nb '#404040' -nf '#f6f3e8' -sb '#898941' -sf '#000000'
-
-dmenu_run -i -b -nb '#404040' -nf '#5f87af' -sb '#afaf87' -sf '#000000'
