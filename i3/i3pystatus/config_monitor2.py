@@ -5,6 +5,7 @@ import subprocess
 
 
 status = Status(standalone=True)
+#status = Status()
 
 from colors import *
 
@@ -24,24 +25,22 @@ status.register("clock",
 status.register("updates",
                         format = "Updates: {count}",
                         #color = "#689d6a",
-                        #color = "#00DD00",
-                        color = updates,
-                        format_no_updates = "No updates",
                         #color_no_updates = "#ebdbb2",
-                        #color_no_updates = "#FFFFFF",
+                        color = updates,
                         color_no_updates = color_no_updates,
-			format_working = None,
-			color_working = None,
+                        color_working = None,
+                        format_no_updates = "No updates",
+                        format_working = "Working...",
                         backends = [dnf.Dnf()],)
 
 # Shows disk usage of /home/curtis/
 status.register("disk",
-		path="/home/curtis/",
-		hints = {"markup": "pango"},
-		format = "<span color=\"#ebdbb2\"> :</span> {used}/{total}G [{avail}G]",
-		#color = "#d79921",)
-		#color = "#afaf87",)
-                color = color_disk,)
+                        path="/home/curtis/",
+                        hints = {"markup": "pango"},
+                        format = "<span color=\"#ebdbb2\"> :</span> {used}/{total}G [{avail}G]",
+                        #color = "#d79921",)
+                        #color = "#afaf87",)
+                        color = color_disk,)
 
 
 
@@ -67,7 +66,7 @@ status.register("online",
 status.register("network",
     interface="enp2s0",
     hints = {"markup": "pango"},
-    format_up="<span color=\"#ebdbb2\"> :</span> {v4cidr} ",
+    format_up="<span color=\"#ebdbb2\"> :</span> {v4} ",
     #color_up = "#98971a",
     #color_up = "#fd971f",
     #color_down = "red",)

@@ -117,6 +117,8 @@ unset safe_term match_lhs
 #[ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
+#
+export TERM=xterm-256color
 
 # User specific aliases and functions
 #alias pyback='python /home/curtis/Scripts/PyBackup/PyBackup.py'

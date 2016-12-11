@@ -7,8 +7,8 @@ defutf8 on
 # tab-completion flash in heading bar
 vbell off
 
-#term screen-256color
-term rxvt-unicode-256color
+term screen-256color
+#term rxvt-unicode-256color
 
 # keep scrollback n lines
 defscrollback 1000
@@ -25,6 +25,15 @@ screen  -t	irssi	4	irssi
 
 # might add a backtick here to display ipv4 address
 # backtick 101 0 20 hostname -I | sed 's .*//'
+
+# to have vim behave correctly when using it from
+# console and exiting
+altscreen
+attrcolor u "-u R"
+# erase background with current bg color
+defbce "on"
+
+
 
 # THIS IS THE PRETTY BIT
 hardstatus	on
