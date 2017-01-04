@@ -135,7 +135,9 @@ bindsym $mod+Return exec urxvt256c
 bindsym $mod+d exec ~/.config/i3/dmenu_launch
 
 # Give menu of open apps that will switch focus to them
-bindsym $mod+Shift+n exec "~/.config/i3/i3-container-commander.py"
+#bindsym $mod+Tab exec "~/.config/i3/i3-container-commander.py"
+
+bindsym $mod+Tab exec "~/.config/i3/alt-tab.py"
 
 #-------------------------------------------------------------------------------
 # Modes
