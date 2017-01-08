@@ -58,7 +58,4 @@ Xft.hintstyle:              hintslight
 
 
 !Fonts
-!URxvt*font:             xft:terminus:size=10
-!URxvt*font:		xft:Monospace-Bold:size=10
-URxvt*font: xft:Inconsolata\ for\ Powerline:regular:pixelsize=15,xft:Monospace-Bold:size=10
-
+URxvt*font: xft:Inconsolata for Powerline:size=11,xft:Monospace-Bold:size=10

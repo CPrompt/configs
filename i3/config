@@ -134,10 +134,15 @@ bindsym $mod+Return exec urxvt256c
 # start dmenu with custom color settings
 bindsym $mod+d exec ~/.config/i3/dmenu_launch
 
+# next workspace
+bindsym $mod+Tab workspace next
+
+# previous workspace
+bindsym $mod+Shift+Tab workspace prev
+
 # Give menu of open apps that will switch focus to them
 #bindsym $mod+Tab exec "~/.config/i3/i3-container-commander.py"
-
-bindsym $mod+Tab exec "~/.config/i3/alt-tab.py"
+#bindsym $mod+Tab exec "~/.config/i3/alt-tab.py"
 
 #-------------------------------------------------------------------------------
 # Modes
@@ -216,6 +221,7 @@ bar {
 		separator #262626
 	}
 		separator_symbol "|"
+		tray_output DVI-0
 
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
@@ -238,8 +244,10 @@ bar {
 		active_workspace #333333 #5f676a #ffffff
 		inactive_workspace #333333 #222222 #888888
 		separator #262626
+		
 	}
-		separator_symbol "|"
+                separator_symbol "|"
+		tray_output DVI-0
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
 		position bottom
