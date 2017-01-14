@@ -7,8 +7,8 @@ defutf8 on
 # tab-completion flash in heading bar
 vbell off
 
-term screen-256color
-#term rxvt-unicode-256color
+#term screen-256color
+term rxvt-unicode-256color
 
 # keep scrollback n lines
 defscrollback 1000
@@ -32,7 +32,6 @@ altscreen
 attrcolor u "-u R"
 # erase background with current bg color
 defbce "on"
-
 
 
 # THIS IS THE PRETTY BIT
