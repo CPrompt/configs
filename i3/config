@@ -201,9 +201,14 @@ workspace 0 output DVI-0
 
 # Assign applications to specific workspace
 assign [class="Thunderbird"] 1
-assign [class="vivaldi"] 1
-#assign [class="browser" instance="Navigator"] 1
+
+#assign [class="vivaldi"] 1
+
+# assign Firefox to workspace 1
+assign [class="browser" instance="Navigator"] 1
+
 #assign [class="Google-chrome" instance="google-chrome"] 1
+
 assign [class="URxvt" instance="screen"] 2
 
 #-------------------------------------------------------------------------------
@@ -284,7 +289,10 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 #exec google-chrome --class="Google-chrome"
 
 # start vivaldi
-exec vivaldi-stable -class="vivaldi"
+#exec vivaldi-stable -class="vivaldi"
+
+# start firefox
+exec firefox --class="browser"
 
 # start Thunderbird
 exec thunderbird
