@@ -1,18 +1,21 @@
 from i3pystatus import Status
 from i3pystatus import get_module
-from i3pystatus.weather import weathercom
-#from i3pystatus.weather import wunderground
-
+#from i3pystatus.weather import weathercom
+from i3pystatus.weather import wunderground
+import logging
 import subprocess
 
 from colors import *
 
-status = Status(standalone=True)
+status = Status(
+        logfile='/home/curtis/.config/i3/i3pystatus/i3pystatus.log',
+        logformat='%(asctime)s $(levelname)s:',
+        standalone=True,
+        )
 
 # Uses weather.com to get current temp
-
+'''
 status.register("weather",
-        #format='{city} : Right Now: {condition} {current_temp}{temp_unit} {icon}   Hi: {high_temp} Lo: {low_temp}',
         format='{city}: Right Now: {condition} {current_temp}{temp_unit}{icon} Hi: {high_temp} Lo: {low_temp}',
 	colorize=True,
         color_icons = {
@@ -30,14 +33,17 @@ status.register("weather",
             location_code="USNC0314:1:US",
             units='imperial',
             update_error='<span color="#ff0000">|</span>',
+            log_level=10,
         ),
 )
-
+'''
+'''
 # http://api.wunderground.com/api/0b012a21f26a3f71/conditions/q/NC/pws:KNCHIGHP24.json
 '''
+
 status.register(
             'weather',
-            format='{city} Right Now: {condition} {current_temp}{temp_unit}{icon}  Hi: {high_temp} Lo: {low_temp}',
+            format='{city}    {condition} {current_temp}{temp_unit}{icon}  Hi: {high_temp} Lo: {low_temp}',
             colorize=True,
             color_icons = {
 				'Fair': (u'\u263c', '#ffcc00'),
@@ -56,11 +62,12 @@ status.register(
 				forecast='True',
 	),
 )
-'''
+
 
 status.register("pulseaudio",
         color_unmuted = pulse_audio,
 	format = ' : {volume}',
+        log_level=10,
         )
 
 
@@ -75,6 +82,7 @@ status.register("cmus",
         'stopped': '',
     },
     interval = 1,
+    log_level=10,
 )
 
 

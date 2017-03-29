@@ -212,11 +212,37 @@ assign [class="browser" instance="Navigator"] 1
 assign [class="URxvt" instance="screen"] 2
 
 #-------------------------------------------------------------------------------
+# Autostart settings for single monitor
+#-------------------------------------------------------------------------------
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+#bar {
+#	colors{
+#		background #282828
+#		focused_workspace #076678 #285577 #ffffff
+#		active_workspace #333333 #5f676a #ffffff
+#		inactive_workspace #333333 #222222 #888888
+#		separator #262626
+#	}
+#		separator_symbol "|"
+
+#		Begin i3pystatus config
+#		status_command python3 ~/.config/i3/i3pystatus/config.py
+#		position bottom
+#		workspace_buttons yes
+#		End i3pystatus config
+
+
+#}
+
+#-------------------------------------------------------------------------------
 # Autostart settings for monitor 1
 #-------------------------------------------------------------------------------
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+
 bar {
 	colors{
 		background #282828
