@@ -1,7 +1,7 @@
 from i3pystatus import Status
 from i3pystatus import get_module
-#from i3pystatus.weather import weathercom
-from i3pystatus.weather import wunderground
+from i3pystatus.weather import weathercom
+#from i3pystatus.weather import wunderground
 import logging
 import subprocess
 
@@ -14,7 +14,6 @@ status = Status(
         )
 
 # Uses weather.com to get current temp
-'''
 status.register("weather",
         format='{city}: Right Now: {condition} {current_temp}{temp_unit}{icon} Hi: {high_temp} Lo: {low_temp}',
 	colorize=True,
@@ -36,11 +35,11 @@ status.register("weather",
             log_level=10,
         ),
 )
-'''
+
 '''
 # http://api.wunderground.com/api/0b012a21f26a3f71/conditions/q/NC/pws:KNCHIGHP24.json
 '''
-
+'''
 status.register(
             'weather',
             format='{city}    {condition} {current_temp}{temp_unit}{icon}  Hi: {high_temp} Lo: {low_temp}',
@@ -62,7 +61,7 @@ status.register(
 				forecast='True',
 	),
 )
-
+'''
 
 status.register("pulseaudio",
         color_unmuted = pulse_audio,
