@@ -202,15 +202,15 @@ workspace 0 output DVI-0
 # Assign applications to specific workspace
 assign [class="Thunderbird"] 1
 
-#assign [class="vivaldi"] 1
-
-# assign Firefox to workspace 1
+# assign all browsers to workspace 1
 assign [class="browser" instance="Navigator"] 1
-
-#assign [class="Google-chrome" instance="google-chrome"] 1
+assign [class="Google-chrome" instance="google-chrome"] 1
+assign [class="vivaldi"] 1
+assign [class="Opera"] 1
 
 assign [class="URxvt" instance="screen"] 2
 
+assign [class="Cherrytree"] 4
 #-------------------------------------------------------------------------------
 # Autostart settings for single monitor
 #-------------------------------------------------------------------------------
