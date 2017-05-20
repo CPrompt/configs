@@ -75,9 +75,12 @@ set fo=tcrqn		" See Help (complex)
 set autoindent		" Autoindent my code.
 set smartindent		" set smart indent
 set cindent		" cindent.
-set tabstop=8		" number of spaces of tab character
-set softtabstop=8	" same as above
-set shiftwidth=8	" number of space to (auto)indent
+"set tabstop=8		" number of spaces of tab character
+"set softtabstop=8	" same as above
+"set shiftwidth=8	" number of space to (auto)indent
+set tabstop=4		" number of spaces of tab character
+set softtabstop=4	" same as above
+set shiftwidth=4	" number of space to (auto)indent
 set noexpandtab		" real tabs only
 "set nowrap		" do not wrap lines
 set wrap
@@ -145,6 +148,11 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+
 " unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
@@ -173,3 +181,6 @@ let g:airline_theme = 'gruvbox'
 
 "SimpylFold
 let g:SimpylFold_docstring_preview = 1
+
+"python-mode
+let g:pymode = 1

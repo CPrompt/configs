@@ -196,6 +196,7 @@ assign [class="browser" instance="Navigator"] $w1
 assign [class="Google-chrome" instance="google-chrome"] $w1
 assign [class="vivaldi"] $w1
 assign [class="Opera"] $w1
+assign [class="brave"] $w1
 assign [class="URxvt" instance="screen"] $w2
 assign [class="Cherrytree"] $w4
 
