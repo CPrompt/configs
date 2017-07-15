@@ -130,3 +130,4 @@ alias cdclear='cd && clear'
 
 # sync .files for git
 alias gitSync='python ~/Scripts/gitSync/gitSync.py'
+

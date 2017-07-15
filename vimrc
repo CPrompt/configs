@@ -183,4 +183,4 @@ let g:airline_theme = 'gruvbox'
 let g:SimpylFold_docstring_preview = 1
 
 "python-mode
-let g:pymode = 1
+"let g:pymode = 1
