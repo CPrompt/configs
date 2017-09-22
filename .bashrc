@@ -79,14 +79,6 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
 	# Use this other PS1 string if you want \W for root and \w for all other users:
 	# PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h\[\033[01;34m\] \W'; else echo '\[\033[01;32m\]\u@\h\[\033[01;34m\] \w'; fi) \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
 
-	alias ls="ls --color=auto"
-	alias dir="dir --color=auto"
-	alias grep="grep --color=auto"
-	alias dmesg='dmesg --color'
-
-	# Uncomment the "Color" line in /etc/pacman.conf instead of uncommenting the following line...!
-
-	# alias pacman="pacman --color=auto"
 
 else
 
@@ -109,20 +101,9 @@ force_color_prompt=yes
 # Try to keep environment pollution down, EPA loves us.
 unset safe_term match_lhs
 
-# Try to enable the auto-completion (type: "pacman -S bash-completion" to install it).
-#[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-
-# Try to enable the "Command not found" hook ("pacman -S pkgfile" to install it).
-# See also: https://wiki.archlinux.org/index.php/Bash#The_.22command_not_found.22_hook
-#[ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-#
-#export TERM=xterm-256color
 export TERM=rxvt-256color
 
 # User specific aliases and functions
-#alias pyback='python /home/curtis/Scripts/PyBackup/PyBackup.py'
 alias dback='python3 /home/curtis/Scripts/DiamondBack/DiamondBack.py'
 
 # run cd and clear together
@@ -131,3 +112,12 @@ alias cdclear='cd && clear'
 # sync .files for git
 alias gitSync='python ~/Scripts/gitSync/gitSync.py'
 
+alias ls="ls --color=auto"
+alias dir="dir --color=auto"
+alias grep="grep --color=auto"
+alias dmesg="dmesg --color"
+
+# make a directory and then cd into it
+mkcd(){
+	mkdir $1 && cd $_
+}
