@@ -131,7 +131,7 @@ bindsym $mod+Shift+Tab workspace prev
 # set workspace icons and titles
 set $w1 "1:  Web"
 set $w2 "2:  Term"
-set $w3 "3:  Gimp"
+set $w3 "3"
 set $w4 "4:  Notes" 
 
 # switch to workspace
@@ -337,7 +337,7 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 
 # Workspace 1 applications
 #exec google-chrome --class="Google-chrome"
-#exec vivaldi-stable -class="vivaldi"
+#exec vivaldi -class="vivaldi"
 #exec opera
 exec firefox --class="browser"
 exec thunderbird
@@ -354,7 +354,7 @@ for_window [class="Keepassx$"] mark "secret", move scratchpad
 exec --no-startup-id keepassx
 
 # This binds only one instance of Thunar to the scratchpad
-bindsym $mod+Shift+Mod1+2 [con_mark="files"] scratchpad show
-for_window [class="files"] mark "files", move scratchpad
-exec --no-startup-id thunar --class=files
+#bindsym $mod+Shift+Mod1+2 [con_mark="files"] scratchpad show
+#for_window [class="files"] mark "files", move scratchpad
+#exec --no-startup-id thunar --class=files
 
