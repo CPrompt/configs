@@ -86,11 +86,11 @@ bindsym $mod+Shift+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+t floating toggle
+bindsym $mod+w floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -197,6 +197,7 @@ assign [class="Google-chrome" instance="google-chrome"] $w1
 assign [class="vivaldi"] $w1
 assign [class="Opera"] $w1
 assign [class="brave"] $w1
+assign [class="qutebrowser"] $w1
 assign [class="URxvt" instance="screen"] $w2
 assign [class="Cherrytree"] $w4
 
@@ -339,6 +340,7 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 #exec google-chrome --class="Google-chrome"
 #exec vivaldi -class="vivaldi"
 #exec opera
+#exec qutebrowser
 exec firefox --class="browser"
 exec thunderbird
 exec urxvt256c -name screen
