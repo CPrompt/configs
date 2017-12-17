@@ -17,7 +17,8 @@ status.register("clock",
                         #color = "#b16286",
                         #color = "#5f87af",
                         color = color_clock,
-                        on_leftclick = ["gsimplecal"],)
+                        #on_leftclick = ["gsimplecal"],)
+                        on_leftclick = ["orage"],)
 
 # Display updates
 status.register("updates",

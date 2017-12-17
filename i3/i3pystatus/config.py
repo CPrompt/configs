@@ -38,27 +38,27 @@ status.register("updates",
 
 # Uses weather.com to get current temp
 
-status.register("weather",
-        #format='{city} : Right Now: {condition} {current_temp}{temp_unit} {icon}   Hi: {high_temp} Lo: {low_temp}',
-        format='{city}: Right Now: {condition} {current_temp}{temp_unit}{icon} Hi: {high_temp} Lo: {low_temp}',
-	colorize=True,
-        color_icons = {
-            'Fair': (u'\u263c', '#ffcc00'),
-            'Cloudy': (u'\u2601', '#f8f8ff'),
-            'Partly Cloudy': (u'\u2601', '#f8f8ff'),  # \u26c5 is not in many fonts
-            'Rainy': (u'\u26c8', '#cbd2c0'),
-            'Thunderstorm': (u'\u03de', '#cbd2c0'),
-            'Sunny': (u'\u2600', '#ffff00'),
-            'Snow': (u'\u2603', '#ffffff'),
-            'default': ('', None),
-        },
-	interval = 1000,
-	backend=weathercom.Weathercom(
-            location_code="USNC0314:1:US",
-            units='imperial',
-            update_error='<span color="#ff0000">|</span>',
-        ),
-)
+#status.register("weather",
+#        #format='{city} : Right Now: {condition} {current_temp}{temp_unit} {icon}   Hi: {high_temp} Lo: {low_temp}',
+#        format='{city}: Right Now: {condition} {current_temp}{temp_unit}{icon} Hi: {high_temp} Lo: {low_temp}',
+#	colorize=True,
+#        color_icons = {
+#            'Fair': (u'\u263c', '#ffcc00'),
+#            'Cloudy': (u'\u2601', '#f8f8ff'),
+#            'Partly Cloudy': (u'\u2601', '#f8f8ff'),  # \u26c5 is not in many fonts
+#            'Rainy': (u'\u26c8', '#cbd2c0'),
+#            'Thunderstorm': (u'\u03de', '#cbd2c0'),
+#            'Sunny': (u'\u2600', '#ffff00'),
+#            'Snow': (u'\u2603', '#ffffff'),
+#            'default': ('', None),
+#        },
+#	interval = 1000,
+#	backend=weathercom.Weathercom(
+#            location_code="USNC0314:1:US",
+#            units='imperial',
+#            update_error='<span color="#ff0000">|</span>',
+#        ),
+#)
 
 # http://api.wunderground.com/api/0b012a21f26a3f71/conditions/q/NC/pws:KNCHIGHP24.json
 '''
@@ -115,15 +115,15 @@ status.register("online",
 #
 # Note: the network module requires PyPI package netifaces
 
-status.register("network",
-                        interface="enp2s0",
-                        hints = {"markup": "pango"},
-                        format_up="<span color=\"#ebdbb2\"> :</span> {v4} ",
-                        #color_up = "#98971a",
-                        #color_up = "#fd971f",
-                        #color_down = "red",)
-                        color_up = color_network_up,
-                        color_down = color_network_down,)
+#status.register("network",
+#                        interface="enp2s0",
+#                        hints = {"markup": "pango"},
+#                        format_up="<span color=\"#ebdbb2\"> :</span> {v4} ",
+#                        #color_up = "#98971a",
+#                        #color_up = "#fd971f",
+#                        #color_down = "red",)
+#                        color_up = color_network_up,
+#                        color_down = color_network_down,)
 
 
 
