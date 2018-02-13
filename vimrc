@@ -11,6 +11,8 @@ set viminfo+=!
 "setlocal spell spelllang=en_us	"turn on spellcheck
 syntax on			"turn on syntax highlighting
 set clipboard=unnamedplus	"set the clipboard so we can access it
+" don't close if unsaved changes
+set confirm
 " -----------------------
 "  " User interface settings
 "  " -----------------------
@@ -56,7 +58,9 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:<,eol:$ " what to show when I 
 set textwidth=70        " 70 cols width is very safe.
 set so=10		" Keep 10 lines (top/bottom) for scope
 set novisualbell	" don't blink
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04v][%p%%]\ [LEN=%L]
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04v][%p%%]\ [LEN=%L]
+" set statusline=%{fugitive#statusline()}
 set laststatus=2	" always show the status line
 set t_Co=256
 
@@ -130,6 +134,7 @@ let g:syntastic_check_on_wq = 0
 "------------------------------------
 let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
+let g:airline_section_c = '%{fugitive#statusline()}'
 let g:airline_theme = 'dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = "|"
