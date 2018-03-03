@@ -72,6 +72,21 @@ status.register("pulseaudio",
         )
 
 
+#status.register("now_playing",
+#        on_leftclick=["player_command","PlayPause"],
+#        on_rightclick=["player_command","Stop"],
+#        on_middleclick=["player_prop","Shuffle",True],
+#        on_upscroll=["player_command","Seek",-10000000],
+#        on_downscroll=["player_command","Seek",+10000000],
+#        status = {
+#			'pause': '',
+#			'play': '',
+#			'stop': '',
+#		},
+#       format = '{song_elapsed}/{song_length} {artist} - {title}  {status}',
+#		format_no_player = 'Not running',		
+#       )
+
 status.register("cmus",
     color = cmus_color,
     color_not_running = cmus_not_running,

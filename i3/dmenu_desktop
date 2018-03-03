@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3-dmenu-desktop --dmenu='dmenu -i -b -nb '#404040' -nf '#5f87af' -sb '#afaf87' -sf '#000000''

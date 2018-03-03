@@ -145,8 +145,10 @@ abstracts = {
   pubnick = "%N$*%n";
 
   # public message in channel meant for me, $0 = nick mode, $1 = nick
-  pubmsgmenick = "{msgnick $0 $1-}";
-  menick = "%Y$*%n";
+  #pubmsgmenick = "{msgnick $0 $1-}";
+  pubmsgmenick = "{msgnick $0 $1-}%R";
+  #menick = "%Y$*%n";
+  menick = "%R$*%n";
 
   # public highlighted message in channel
   # $0 = highlight color, $1 = nick mode, $2 = nick

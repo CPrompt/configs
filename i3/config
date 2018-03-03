@@ -119,6 +119,9 @@ bindsym $mod+Return exec urxvt256c
 # start dmenu with custom color settings
 bindsym $mod+d exec ~/.config/i3/dmenu_launch
 
+# start dmenu-desktop
+bindsym $mod+Shift+d exec ~/.config/i3/dmenu_desktop
+
 # next workspace
 bindsym $mod+Tab workspace next
 # previous workspace
