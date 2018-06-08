@@ -115,6 +115,8 @@ bindsym $mod+Shift+x workspace $w1; workspace $w2
 bindsym $mod+g workspace $w3; exec gimp
 # start a terminal
 bindsym $mod+Return exec urxvt256c
+# start screensaver
+bindsym $mod+Shift+s exec xscreensaver-command -activate
 
 # start dmenu with custom color settings
 bindsym $mod+d exec ~/.config/i3/dmenu_launch
@@ -195,7 +197,8 @@ mode "resize" {
 
 # Assign applications to specific workspace
 assign [class="Thunderbird"] $w1
-assign [class="browser" instance="Navigator"] $w1
+#assign [class="browser" instance="Navigator"] $w1
+assign [class="browser"] $w1
 assign [class="Google-chrome" instance="google-chrome"] $w1
 assign [class="vivaldi"] $w1
 assign [class="Opera"] $w1
@@ -203,6 +206,12 @@ assign [class="brave"] $w1
 assign [class="qutebrowser"] $w1
 assign [class="URxvt" instance="screen"] $w2
 assign [class="Cherrytree"] $w4
+
+# Was testing making a new instance of FF
+# You can do this but have to: 
+#	1. make a new Profile to use
+#	2. make the exec as firefox -new-instance -P "newProfile" --class="test"
+#assign [class="test"] $w2
 
 #-------------------------------------------------------------------------------
 # 					Window Styles
@@ -316,7 +325,8 @@ bar {
 #exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-rossi_gp_3803.gallery_full_top_fullscreen.jpg
 #exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies.png
 #exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies_universe-today.jpg
-exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/maverick_v.jpg
+#exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/maverick_v.jpg
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-rossi_gp_2880x900.jpg
 
 #-------------------------------------------------------------------------------
 #								Screensaver
@@ -344,7 +354,7 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 #exec vivaldi -class="vivaldi"
 #exec opera
 #exec qutebrowser
-exec firefox --class="browser"
+exec firefox -new-instance -P "default" --class="browser"
 exec thunderbird
 exec urxvt256c -name screen
 exec cherrytree
