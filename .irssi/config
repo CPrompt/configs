@@ -309,5 +309,6 @@ ignores = (
   { level = "JOINS PARTS QUITS NICKS"; channels = ( "#i3" ); },
   { level = "JOINS PARTS QUITS NICKS"; channels = ( "#linuxvoice" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#ansible" ); },
-  { level = "JOINS PARTS QUITS"; channels = ( "#lobsters" ); }
+  { level = "JOINS PARTS QUITS"; channels = ( "#lobsters" ); },
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#python" ); }
 );

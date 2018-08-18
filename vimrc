@@ -189,3 +189,9 @@ let g:SimpylFold_docstring_preview = 1
 
 "python-mode
 "let g:pymode = 1
+"
+"
+"------------------------------------
+"   Nerd Tree
+"------------------------------------
+map <C-n> :NERDTreeToggle<CR>
