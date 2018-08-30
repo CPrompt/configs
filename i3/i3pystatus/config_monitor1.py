@@ -31,20 +31,23 @@ status.register(
         },
         interval = 1000,
 	backend=weathercom.Weathercom(
-            location_code="USNC0314:1:US",
+            location_code='27265',
+            #location_code='USNC0314:1:US',
             #units='imperial',
             update_error='<span color="#ff0000">|</span>',
-            log_level=10,
+            log_level=logging.DEBUG,
         ),
 )
+
+
 '''
 
 #http://api.wunderground.com/api/0b012a21f26a3f71/conditions/q/NC/pws:KNCHIGHP24.json
 
-
 status.register(
             'weather',
-            format='{city} {condition} {current_temp}{temp_unit}{icon}  Hi: {high_temp} Lo: {low_temp}',
+            format='{city}    {condition}  {current_temp}{temp_unit}{icon}   Hi: {high_temp} Lo: {low_temp}',
+            #format='{city} {condition} {current_temp}{temp_unit}{icon}  Hi: {high_temp} Lo: {low_temp}',
             colorize=True,
             color_icons = {
 	        'Fair': (u'\u263c', '#ffcc00'),
@@ -59,7 +62,8 @@ status.register(
             backend=wunderground.Wunderground(
                 api_key='0b012a21f26a3f71',
                 location_code='pws:KNCHIGHP24',
-	        units='imperial',
+	        #location_code='NC/High-Point',
+                units='imperial',
 	        forecast='True',
 	    ),
 )
