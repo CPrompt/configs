@@ -31,9 +31,9 @@ status.register(
         },
         interval = 1000,
 	backend=weathercom.Weathercom(
-            location_code='27265',
-            #location_code='USNC0314:1:US',
-            #units='imperial',
+            #location_code='27265',
+            location_code='USNC0314:1:US',
+            units='imperial',
             update_error='<span color="#ff0000">|</span>',
             log_level=logging.DEBUG,
         ),
