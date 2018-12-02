@@ -42,6 +42,7 @@ status.register(
 
 
 
+
 #http://api.wunderground.com/api/0b012a21f26a3f71/conditions/q/NC/pws:KNCHIGHP24.json
 '''
 status.register(

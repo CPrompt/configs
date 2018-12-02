@@ -25,16 +25,16 @@ workspace_layout tabbed
 #-------------------------------------------------------------------------------
 # 					Workspace Screen Assignments
 #-------------------------------------------------------------------------------
-workspace $w1 output VGA-0
-workspace $w2 output DVI-0
-workspace $w3 output VGA-0
-workspace $w4 output DVI-0
-workspace 5 output VGA-0
-workspace 6 output DVI-0
-workspace 7 output VGA-0
-workspace 8 output DVI-0
-workspace 9 output VGA-0
-workspace 0 output DVI-0
+workspace $w1 output DVI-0
+workspace $w2 output VGA-0
+workspace $w3 output DVI-0
+workspace $w4 output VGA-0
+workspace 5 output DVI-0
+workspace 6 output VGA-0
+workspace 7 output DVI-0
+workspace 8 output VGA-0
+workspace 9 output DVI-0
+workspace 0 output VGA-0
 
 #-------------------------------------------------------------------------------
 # 								Bindsyms
@@ -279,7 +279,7 @@ bar {
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
 		position bottom
 		workspace_buttons yes
-		output VGA-0
+		output DVI-0
 #		End i3pystatus config
 }
 
@@ -308,7 +308,7 @@ bar {
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
 		position bottom
 		workspace_buttons yes
-		output DVI-0
+		output VGA-0
 #		End i3pystatus config
 
 }
@@ -334,6 +334,10 @@ exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-r
 # start up the xscreensaver
 exec xscreensaver -no-splash
 
+#------------------------------------------------------------------------------
+#							Monitor Position
+#------------------------------------------------------------------------------
+exec --no-startup-id "xrandr --output VGA-0 --auto --right-of DVI-0"
 
 #-------------------------------------------------------------------------------
 #									Mouse	

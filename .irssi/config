@@ -115,9 +115,9 @@ chatnets = {
 };
 
 channels = (
-  { name = "oggcastplanet"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "linuxvoice"; chatnet = "freenode"; autojoin = "Yes"; },
-  { name = "i3"; chatnet = "freenode"; autojoin = "Yes"; },
+  { name = "oggcastplanet"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "linuxvoice"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "i3"; chatnet = "freenode"; autojoin = "No"; },
   { name = "uzbl"; chatnet = "freenode"; autojoin = "No"; },
   { name = "fedora"; chatnet = "freenode"; autojoin = "No"; },
 
@@ -312,3 +312,37 @@ ignores = (
   { level = "JOINS PARTS QUITS"; channels = ( "#lobsters" ); },
   { level = "JOINS PARTS QUITS NICKS"; channels = ( "#python" ); }
 );
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "nickserv";
+        tag = "Freenode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#oggcastplanet";
+        tag = "Freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#linuxvoice";
+        tag = "Freenode";
+      }
+    );
+  };
+};
+mainwindows = { 1 = { first_line = "1"; lines = "50"; }; };
