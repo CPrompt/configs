@@ -31,11 +31,8 @@ status.register(
         },
         interval = 1000,
 	backend=weathercom.Weathercom(
-            #location_code='27265',
             location_code='USNC0314:1:US',
             units='imperial',
-            #update_error='<span color="#ff0000">|</span>',
-            #log_level=logging.DEBUG,
         ),
 )
 
@@ -77,20 +74,6 @@ status.register("pulseaudio",
         )
 
 
-#status.register("now_playing",
-#        on_leftclick=["player_command","PlayPause"],
-#        on_rightclick=["player_command","Stop"],
-#        on_middleclick=["player_prop","Shuffle",True],
-#        on_upscroll=["player_command","Seek",-10000000],
-#        on_downscroll=["player_command","Seek",+10000000],
-#        status = {
-#			'pause': '',
-#			'play': '',
-#			'stop': '',
-#		},
-#       format = '{song_elapsed}/{song_length} {artist} - {title}  {status}',
-#		format_no_player = 'Not running',
-#       )
 
 status.register("cmus",
     color = cmus_color,
@@ -107,6 +90,21 @@ status.register("cmus",
 )
 
 
+status.register("now_playing",
+        on_leftclick=["player_command","PlayPause"],
+        on_rightclick=["player_command","Stop"],
+        on_middleclick=["player_prop","Shuffle",True],
+        on_upscroll=["player_command","Seek",-10000000],
+        on_downscroll=["player_command","Seek",+10000000],
+        status = {
+			'pause': '',
+			'play': '',
+			'stop': '',
+		},
+       format = '{song_elapsed}/{song_length} {artist} - {title}  {status}',
+		format_no_player = 'Not running',    
+       color = color_disk,
+)
 
 
 status.run()

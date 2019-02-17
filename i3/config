@@ -25,15 +25,15 @@ workspace_layout tabbed
 #-------------------------------------------------------------------------------
 # 					Workspace Screen Assignments
 #-------------------------------------------------------------------------------
-workspace $w1 output DVI-0
+workspace $w1 output HDMI-0
 workspace $w2 output VGA-0
-workspace $w3 output DVI-0
+workspace $w3 output HDMI-0
 workspace $w4 output VGA-0
-workspace 5 output DVI-0
+workspace 5 output HDMI-0
 workspace 6 output VGA-0
-workspace 7 output DVI-0
+workspace 7 output HDMI-0
 workspace 8 output VGA-0
-workspace 9 output DVI-0
+workspace 9 output HDMI-0
 workspace 0 output VGA-0
 
 #-------------------------------------------------------------------------------
@@ -273,13 +273,13 @@ bar {
 		separator #262626
 	}
 		separator_symbol "|"
-		tray_output DVI-0
+		tray_output HDMI-0 
 
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
 		position bottom
 		workspace_buttons yes
-		output DVI-0
+		output HDMI-0
 #		End i3pystatus config
 }
 
@@ -303,7 +303,7 @@ bar {
 		
 	}
         separator_symbol "|"
-		tray_output DVI-0
+		tray_output HDMI-0 
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
 		position bottom
@@ -326,7 +326,9 @@ bar {
 #exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies.png
 #exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/extraterrestrial_bodies_universe-today.jpg
 #exec --no-startup-id feh --bg-center --no-xinerama ~/Pictures/Walls/maverick_v.jpg
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-rossi_gp_2880x900.jpg
+#exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/46-valentino-rossi_gp_2880x900.jpg
+#exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/Time_of_Day/1-Early_Morning.png
+exec --no-startup-id "python3 ~/Scripts/pyTimeWall/pyTimeWall.py"
 
 #-------------------------------------------------------------------------------
 #								Screensaver
@@ -337,7 +339,7 @@ exec xscreensaver -no-splash
 #------------------------------------------------------------------------------
 #							Monitor Position
 #------------------------------------------------------------------------------
-exec --no-startup-id "xrandr --output VGA-0 --auto --right-of DVI-0"
+exec --no-startup-id "xrandr --output VGA-0 --auto --right-of HDMI-0"
 
 #-------------------------------------------------------------------------------
 #									Mouse	
@@ -360,8 +362,9 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 #exec qutebrowser
 exec firefox -new-instance -P "default" --class="browser"
 exec thunderbird
-exec urxvt256c -name screen
 exec cherrytree
+exec urxvt256c -name screen
+
 
 #-------------------------------------------------------------------------------
 #							Scratchpad	
@@ -377,3 +380,11 @@ exec --no-startup-id keepassx
 #for_window [class="files"] mark "files", move scratchpad
 #exec --no-startup-id thunar --class=files
 
+#-------------------------------------------------------------------------------
+#					Moving workspaces at startup
+#-------------------------------------------------------------------------------
+exec i3-msg 'workspace "4:  Notes";sleep 2'
+exec i3-msg 'workspace "2:  Term";sleep 2'
+
+#set $w2 "2:  Term"
+#set $w4 "4:  Notes" 
