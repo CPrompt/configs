@@ -36,6 +36,10 @@ workspace 8 output VGA-0
 workspace 9 output HDMI-0
 workspace 0 output VGA-0
 
+# for the "Show Desktop" shortcut
+workspace 15 output HDMI-0
+workspace 16 output VGA-0
+
 #-------------------------------------------------------------------------------
 # 								Bindsyms
 #-------------------------------------------------------------------------------
@@ -107,7 +111,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+r mode "resize"
 
 # Simulate "Show Desktop"
-bindsym $mod+x workspace $w3; workspace 6
+bindsym $mod+x workspace 15; workspace 16
 # Show workspace 1 and 2
 #bindsym $mod+Shift+x workspace 1; workspace 2
 bindsym $mod+Shift+x workspace $w1; workspace $w2
@@ -137,7 +141,7 @@ bindsym $mod+Shift+Tab workspace prev
 set $w1 "1:  Web"
 set $w2 "2:  Term"
 set $w3 "3"
-set $w4 "4:  Notes" 
+set $w4 "4:  Notes"
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -169,26 +173,26 @@ bindsym $mod+Shift+0 move container to workspace 0
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+	bindsym j resize shrink width 10 px or 10 ppt
+		bindsym k resize grow height 10 px or 10 ppt
+		bindsym l resize shrink height 10 px or 10 ppt
+		bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+		bindsym Left resize shrink width 10 px or 10 ppt
+		bindsym Down resize grow height 10 px or 10 ppt
+		bindsym Up resize shrink height 10 px or 10 ppt
+		bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
 }
 
 #-------------------------------------------------------------------------------
@@ -208,7 +212,7 @@ assign [class="URxvt" instance="screen"] $w2
 assign [class="Cherrytree"] $w4
 
 # Was testing making a new instance of FF
-# You can do this but have to: 
+# You can do this but have to:
 #	1. make a new Profile to use
 #	2. make the exec as firefox -new-instance -P "newProfile" --class="test"
 #assign [class="test"] $w2
@@ -264,16 +268,16 @@ for_window [class="Galculator"] floating enable border normal
 
 bar {
 	colors{
-		background #282828		
-		focused_workspace #928374 #282828 #fbf1c7
-		#focused_workspace #076678 #285577 #ffffff
-		active_workspace #333333 #5f676a #ffffff
-		#inactive_workspace #333333 #222222 #888888
-		inactive_workspace #282828 #1d2021 #ebdbb2
-		separator #262626
+		background #282828
+			focused_workspace #928374 #282828 #fbf1c7
+#focused_workspace #076678 #285577 #ffffff
+			active_workspace #333333 #5f676a #ffffff
+#inactive_workspace #333333 #222222 #888888
+			inactive_workspace #282828 #1d2021 #ebdbb2
+			separator #262626
 	}
-		separator_symbol "|"
-		tray_output HDMI-0 
+	separator_symbol "|"
+		tray_output HDMI-0
 
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
@@ -293,17 +297,17 @@ bar {
 #  #665c54 #665c54 #fbf1c7 #665c54 #665c54
 bar {
 	colors{
-		background #282828		
-		focused_workspace #928374 #282828 #fbf1c7
-		#focused_workspace #076678 #285577 #ffffff
-		active_workspace #333333 #5f676a #ffffff
-		#inactive_workspace #333333 #222222 #888888
-		inactive_workspace #282828 #1d2021 #ebdbb2
-		separator #262626
-		
+		background #282828
+			focused_workspace #928374 #282828 #fbf1c7
+#focused_workspace #076678 #285577 #ffffff
+			active_workspace #333333 #5f676a #ffffff
+#inactive_workspace #333333 #222222 #888888
+			inactive_workspace #282828 #1d2021 #ebdbb2
+			separator #262626
+
 	}
-        separator_symbol "|"
-		tray_output HDMI-0 
+	separator_symbol "|"
+		tray_output HDMI-0
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
 		position bottom
@@ -342,7 +346,7 @@ exec xscreensaver -no-splash
 exec --no-startup-id "xrandr --output VGA-0 --auto --right-of HDMI-0"
 
 #-------------------------------------------------------------------------------
-#									Mouse	
+#									Mouse
 #-------------------------------------------------------------------------------
 # set i3 to use a left handed mouse
 exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
@@ -350,7 +354,7 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 #exec --no-startup-id "xmodmap -e 'pointer = 1 2 3'"
 
 #-------------------------------------------------------------------------------
-#							Workspace Applications	
+#							Workspace Applications
 #-------------------------------------------------------------------------------
 # These applications autostart and above they are set to
 # specific workspaces
@@ -365,9 +369,8 @@ exec thunderbird
 exec cherrytree
 exec urxvt256c -name screen
 
-
 #-------------------------------------------------------------------------------
-#							Scratchpad	
+#							Scratchpad
 #-------------------------------------------------------------------------------
 
 # This binds mod+shift+alt+1 to show keepass
@@ -383,8 +386,8 @@ exec --no-startup-id keepassx
 #-------------------------------------------------------------------------------
 #					Moving workspaces at startup
 #-------------------------------------------------------------------------------
-exec i3-msg 'workspace "4:  Notes";sleep 2'
-exec i3-msg 'workspace "2:  Term";sleep 2'
+#exec i3-msg 'workspace "4:  Notes";sleep 2'
+#exec i3-msg 'workspace "2:  Term";sleep 2'
 
 #set $w2 "2:  Term"
-#set $w4 "4:  Notes" 
+#set $w4 "4:  Notes"

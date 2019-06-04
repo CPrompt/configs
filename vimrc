@@ -195,3 +195,8 @@ let g:SimpylFold_docstring_preview = 1
 "   Nerd Tree
 "------------------------------------
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=60
+
+"------------------------------------
+"  Moving between tabs
+"------------------------------------
