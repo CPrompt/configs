@@ -32,9 +32,11 @@ shopt -s histappend
 case ${TERM} in
 	xterm*|rxvt*|Eterm|aterm|kterm|gnome*)
 		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
+		#trap 'echo -ne "\e]0;WAYNE-MANOR\007"' DEBUG
 		;;
 	screen)
 		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
+		#trap 'echo -ne "\e]0;WAYNE-MANOR SCREEN\007"' DEBUG
 		;;
 esac
 
@@ -81,7 +83,10 @@ if [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] ; then
 	#PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 	#PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
-	
+
+
+	#----------- Use this if you want to see the git branch you are on in the prompt.  However, this really jacks up the
+	#----------- trap set in "case $(TERM)" section above.
 	PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;32m\]\u@\h'; fi)\[\033[01;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\$(parse_git_branch)\[\033[00m\] $ "
 
 	# Use this other PS1 string if you want \W for root and \w for all other users:
@@ -114,22 +119,3 @@ export TERM=rxvt-256color
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
-
-# User specific aliases and functions
-#alias dback='python3 /home/curtis/Scripts/DiamondBack/DiamondBack.py'
-# run cd and clear together
-#alias cdclear='cd && clear'
-# sync .files for git
-#alias gitSync='python ~/Scripts/gitSync/gitSync.py'
-# make quickbackup of file
-#alias bakupFile='/home/curtis/Scripts/bakupFile.sh'
-#
-#alias ls="ls -atl --color=auto"
-#alias dir="dir --color=auto"
-#alias grep="grep --color=auto"
-#alias dmesg="dmesg --color"
-#
-# make a directory and then cd into it
-#mkcd(){
-#	mkdir $1 && cd $_
-#}
