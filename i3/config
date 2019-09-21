@@ -210,7 +210,7 @@ assign [class="brave"] $w1
 assign [class="qutebrowser"] $w1
 assign [class="URxvt" instance="screen"] $w2
 assign [class="Cherrytree"] $w4
-
+assign [class="kmymoney"] $w2
 # Was testing making a new instance of FF
 # You can do this but have to:
 #	1. make a new Profile to use

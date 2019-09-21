@@ -1,6 +1,6 @@
 "------------------------------------
 "	general settings
-"-----------------------------------
+"------------------------------------
 set nocompatible		"getout of vi-compatible mode
 set history=1000
 set undolevels=200
@@ -13,9 +13,9 @@ syntax on			"turn on syntax highlighting
 set clipboard=unnamedplus	"set the clipboard so we can access it
 " don't close if unsaved changes
 set confirm
-" -----------------------
-"  " User interface settings
-"  " -----------------------
+"-------------------------
+" User interface settings
+"-------------------------
 set lsp=0		" space it out a little more (easier to read)
 set wildmenu		" turn on wild menu
 set ruler               " Show the line and column numbers of the cursor.
@@ -47,9 +47,9 @@ set noerrorbells	" don't make noise
 " make the splitters between windows be blank
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
-" -----------------------
-"  " Visual stuff
-"  " -----------------------
+"-----------------------
+" Visual stuff
+"-----------------------
 set showmatch           " Show matching brackets.
 set mat=5		" how many tenths of a second to blink matching brackets
 set nohlsearch		" do not highlight search terms
@@ -72,9 +72,9 @@ set background=dark
 "colorscheme lumberjack
 "
 "
-" -----------------------
-"  " Text Formatting
-"  " -----------------------
+"-----------------------
+" Text Formatting
+"-----------------------
 set fo=tcrqn		" See Help (complex)
 set autoindent		" Autoindent my code.
 set smartindent		" set smart indent
@@ -94,34 +94,34 @@ set textwidth=0
 set wrapmargin=0
 set smarttab		" use tabs at the start of a line, spaces elsewhere
 
-" -------------------------
-"	Custom Commands
-" -------------------------
+"-------------------------
+" Custom Commands
+"-------------------------
 :command StripTrailing :%s/\s\+$//
 :command RemoveHTML    :%s#<[^>]\+>##g
 
-" "------------------------
-" " For orgmode
-" "------------------------
+"------------------------
+" For orgmode
+"------------------------
 filetype plugin indent on
 
 
-"  " -----------------------
-"  " Folding
-"  " -----------------------
+"-----------------------
+" Folding
+"-----------------------
 set foldenable		" Turn on folding
 set foldmethod=indent	" Make folding indent sensitive
 set foldlevel=100	" Don't autofold anything
 set foldopen-=search	" don't open folds when you search into them
 set foldopen-=undo	" don't open folds when you undo stuff
-"
-" ------------------------------------
-"  pathogen
-" ------------------------------------
+
+"------------------------------------
+" pathogen
+"------------------------------------
 execute 	pathogen#infect()
-" -------------------------------
-"  syntastic
-" ------------------------------
+"-------------------------------
+" syntastic
+"------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -172,7 +172,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
-" airline symbols
+"airline symbols
 "let g:airline_left_sep = ''
 "let g:airline_left_alt_sep = ''
 "let g:airline_right_sep = ''
