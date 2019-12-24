@@ -304,13 +304,23 @@ ignores = (
     level = "JOINS PARTS QUITS MODES";
     channels = ( "#xkcd-signal" );
   },
-  { level = "JOINS QUITS"; channels = ( "#oggcastplanet" ); },
   { level = "JOINS QUITS"; channels = ( "#uzbl" ); },
   { level = "JOINS PARTS QUITS NICKS"; channels = ( "#i3" ); },
   { level = "JOINS PARTS QUITS NICKS"; channels = ( "#linuxvoice" ); },
   { level = "JOINS PARTS QUITS MODES"; channels = ( "#ansible" ); },
   { level = "JOINS PARTS QUITS"; channels = ( "#lobsters" ); },
-  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#python" ); }
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#python" ); },
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#calibre" ); },
+  { level = "JOINS PARTS QUITS NICKS"; channels = ( "#fedora" ); },
+  { mask = "JOINS"; level = "PARTS QUITS"; },
+  {
+    level = "JOINS PARTS QUITS";
+    channels = ( "#oggcastplanet-unregistered" );
+  },
+  {
+    level = "JOINS PARTS QUITS NICKS";
+    channels = ( "#oggcastplanet" );
+  }
 );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
