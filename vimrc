@@ -200,3 +200,20 @@ let g:NERDTreeWinSize=60
 "------------------------------------
 "  Moving between tabs
 "------------------------------------
+"
+"
+"------------------------------------
+"	VimWiki
+"------------------------------------
+let wiki = {}
+let wiki.path = '~/Documents/wiki/'
+let wiki.nested_syntaxes = {'py': 'python', 'ruby': 'ruby'}
+let g:vimwiki_list = [wiki]
+
+let g:vimwiki_folding = 'list'
+
+
+"------------------------------------
+"	Start VimWiki Page on start	
+"------------------------------------
+autocmd VimEnter * if argc() == 0 | execute 'VimwikiIndex' | endif

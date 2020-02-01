@@ -210,7 +210,7 @@ assign [class="brave"] $w1
 assign [class="qutebrowser"] $w1
 assign [class="URxvt" instance="screen"] $w2
 assign [class="Cherrytree"] $w4
-assign [class="Notekit" instance="notekit"] $w4
+#assign [class="Notekit" instance="notekit"] $w4
 assign [class="kmymoney"] $w2
 # Was testing making a new instance of FF
 # You can do this but have to:
@@ -281,9 +281,10 @@ bar {
 		tray_output HDMI-0
 
 #		Begin i3pystatus config
-#		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
+		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
 
-		status_command ~/.config/i3/bumblebee-status/bumblebee-status -m cmus pasink weather -p weather.unit=imperial weather.location=4471025 weather.showminmax=True -t curtis_gruvbox-powerline 
+#		status_command ~/.config/i3/bumblebee-status/bumblebee-status -m cmus pasink weather -p weather.unit=imperial weather.location=4471025 weather.showminmax=True weather.left-click="firefox --new-tab https://openweathermap.org/city/4471025" -t curtis_gruvbox-powerline
+
 		position bottom
 		workspace_buttons yes
 		output HDMI-0
@@ -312,10 +313,15 @@ bar {
 	separator_symbol "|"
 		tray_output HDMI-0
 #		Begin i3pystatus config
-#    	status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
+    	status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
 
-	    status_command ~/.config/i3/bumblebee-status/bumblebee-status -m nic disk dnf datetime -p datetime.left-click="orage" nic.exclude="enp3s5,lo" nic.format="{ip}" -t curtis_gruvbox-powerline
+#	    status_command ~/.config/i3/bumblebee-status/bumblebee-status -m taskwarrior nic disk dnf datetime -p dnf.left-click="notify-send 'Test output'"  datetime.left-click="orage" datetime.format="%M/%d/%Y  %H:%M:%S" nic.exclude="enp3s5,lo" nic.format="{ip}" -t curtis_gruvbox-powerline
+#
+#	    status_command ~/Programming/git/bumblebee-status/bumblebee-status -m taskwarrior nic disk dnf datetime -p datetime.left-click="orage" datetime.format="%m/%d/%Y  %H:%M:%S" nic.exclude="enp3s5,lo" nic.format="{ip}"  -t curtis_gruvbox-powerline
 
+
+# testing bumblebee modules
+#	    status_command ~/.config/i3/bumblebee-status/bumblebee-status -m dnf2
 		position bottom
 		workspace_buttons yes
 		output VGA-0
@@ -372,8 +378,8 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 #exec qutebrowser
 exec firefox -new-instance -P "default" --class="browser"
 exec thunderbird
-exec notekit
-# exec cherrytree
+#exec notekit
+#exec cherrytree
 exec urxvt256c -name screen
 
 #-------------------------------------------------------------------------------

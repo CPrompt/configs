@@ -65,7 +65,7 @@ status.register("online",
 status.register("network",
                         interface="enp2s0",
                         hints = {"markup": "pango"},
-                        format_up="<span color=\"#ebdbb2\"> :</span> {v4} ",
+                        format_up="<span color=\"#ebdbb2\"> :</span> {v4} ",
                         #color_up = "#98971a",
                         #color_up = "#fd971f",
                         #color_down = "red",)
