@@ -14,6 +14,8 @@ alias dir="dir --color=auto"
 alias grep="grep --color=auto"
 alias dmesg="dmesg --color"
 
+alias filebackup="/home/curtis/Scripts/filebackup"
+
 # make a directory and then cd into it
 mkcd(){
 	mkdir $1 && cd $_
