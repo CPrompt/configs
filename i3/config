@@ -25,20 +25,20 @@ workspace_layout tabbed
 #-------------------------------------------------------------------------------
 # 					Workspace Screen Assignments
 #-------------------------------------------------------------------------------
-workspace $w1 output HDMI-0
-workspace $w2 output VGA-0
-workspace $w3 output HDMI-0
-workspace $w4 output VGA-0
-workspace 5 output HDMI-0
-workspace 6 output VGA-0
-workspace 7 output HDMI-0
-workspace 8 output VGA-0
-workspace 9 output HDMI-0
-workspace 0 output VGA-0
+workspace $w1 output VGA-0
+workspace $w2 output HDMI-0
+workspace $w3 output VGA-0
+workspace $w4 output HDMI-0
+workspace 5 output VGA-0
+workspace 6 output HDMI-0
+workspace 7 output VGA-0
+workspace 8 output HDMI-0
+workspace 9 output VGA-0
+workspace 0 output HDMI-0
 
 # for the "Show Desktop" shortcut
-workspace 15 output HDMI-0
-workspace 16 output VGA-0
+workspace 15 output VGA-0
+workspace 16 output HDMI-0
 
 #-------------------------------------------------------------------------------
 # 								Bindsyms
@@ -278,7 +278,7 @@ bar {
 			separator #262626
 	}
 	separator_symbol "|"
-		tray_output HDMI-0
+		tray_output VGA-0
 
 #		Begin i3pystatus config
 		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
@@ -287,7 +287,7 @@ bar {
 
 		position bottom
 		workspace_buttons yes
-		output HDMI-0
+		output VGA-0
 #		End i3pystatus config
 }
 
@@ -311,7 +311,7 @@ bar {
 
 	}
 	separator_symbol "|"
-		tray_output HDMI-0
+		tray_output VGA-0
 #		Begin i3pystatus config
     	status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
 
@@ -324,7 +324,7 @@ bar {
 #	    status_command ~/.config/i3/bumblebee-status/bumblebee-status -m dnf2
 		position bottom
 		workspace_buttons yes
-		output VGA-0
+		output HDMI-0
 #		End i3pystatus config
 
 }
@@ -355,7 +355,8 @@ exec xscreensaver -no-splash
 #------------------------------------------------------------------------------
 #							Monitor Position
 #------------------------------------------------------------------------------
-exec --no-startup-id "xrandr --output VGA-0 --auto --right-of HDMI-0"
+#exec --no-startup-id "xrandr --output VGA-0 --auto --right-of HDMI-0"
+exec --no-startup-id "xrandr --output HDMI-0 --auto --right-of VGA-0"
 
 #-------------------------------------------------------------------------------
 #									Mouse
