@@ -12,10 +12,8 @@ status = Status(
         standalone=True,
         )
 
-
 status.register(
         'weather',
-        #format='{city}, {state}   {condition}  {current_temp}{temp_unit}{icon}   Hi: {high_temp} Lo: {low_temp}',
         format='{city}, NC  {icon}{condition}  {current_temp}{temp_unit}   Hi: {high_temp} Lo: {low_temp}',
         colorize=True,
         color_icons = {
@@ -32,9 +30,9 @@ status.register(
         backend=weathercom.Weathercom(
             location_code='USNC0314:1:US',
             units='imperial',
+            log_level=10,
             ),
         )
-
 
 
 status.register("pulseaudio",
