@@ -21,7 +21,7 @@ screen  -t  ranger  2   ranger
 screen	-t	htop	3	htop
 screen  -t	cmus	4	cmus
 screen  -t	irssi 	5	irssi
-screen  -t  robin.gotham	6 ssh curtis@robin	
+#screen  -t  robin.gotham	6 ssh curtis@robin	
 # see if we can split the screen verticle on start
 # split -v
 

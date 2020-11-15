@@ -209,6 +209,7 @@ assign [class="Opera"] $w1
 assign [class="brave"] $w1
 assign [class="qutebrowser"] $w1
 assign [class="URxvt" instance="screen"] $w2
+assign [class="xfce4-terminal"] $w2
 assign [class="Cherrytree"] $w4
 #assign [class="Notekit" instance="notekit"] $w4
 assign [class="kmymoney"] $w2
@@ -381,7 +382,12 @@ exec firefox -new-instance -P "default" --class="browser"
 exec thunderbird
 #exec notekit
 #exec cherrytree
-exec urxvt256c -name screen
+
+#exec urxvt256c -name screen
+#exec urxvt256c -name robin
+#exec urxvt256c -name poison-ivy
+
+exec xfce4-terminal -T wayne-manor --tab -T poison-ivy -e "ssh curtis@poison-ivy" --tab -T robin -e "ssh curtis@robin"
 
 #-------------------------------------------------------------------------------
 #							Scratchpad
@@ -405,3 +411,9 @@ exec --no-startup-id keepassx
 
 #set $w2 "2:  Term"
 #set $w4 "4:  Notes"
+#
+# display titles in bold
+for_window [class=".*"] title_format "<b>%title</b>"
+for_window [class="(?i)Urxvt" instance="(?)screen"] title_format "<span>wayne-manor</span>"
+for_window [class="(?i)Urxvt" instance="(?)robin"] title_format "<span>robin</span>"
+for_window [class="(?i)Urxvt" instance="(?)poison-ivy"] title_format "<span>poison-ivy</span>"

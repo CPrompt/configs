@@ -1,5 +1,6 @@
 from i3pystatus import Status
 from i3pystatus import get_module
+from i3pystatus.weather import wunderground
 from i3pystatus.weather import weathercom
 import logging
 import subprocess
@@ -7,10 +8,12 @@ import subprocess
 from colors import *
 
 status = Status(
-        logfile='/home/curtis/.config/i3/i3pystatus/i3pystatus.log',
-        #logformat='%(asctime)s $(levelname)s:',
+        logfile='/home/curtis/.config/i3/i3pystatus/logs/i3pystatus_monitor1.log',
+        logformat='%(asctime)s $(levelname)s:',
         standalone=True,
         )
+
+
 
 status.register(
         'weather',
@@ -33,6 +36,20 @@ status.register(
             log_level=10,
             ),
         )
+
+'''
+status.register(
+        'weather',
+        format='{condition} {current_temp}{temp_unit}[ {icon}][ Hi: {high_temp}][ Lo: {low_temp}][ {update_error}]',
+        colorize=True,
+        hints={'markup': 'pango'},
+        backend=wunderground.Wunderground(
+            location_code='KNCHIGHP59',
+            units='imperial',
+            update_error='<span color="#ff0000">!</span>',
+        ),
+    )
+'''
 
 
 status.register("pulseaudio",

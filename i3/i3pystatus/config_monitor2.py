@@ -4,7 +4,11 @@ from i3pystatus.updates import dnf
 import subprocess
 
 
-status = Status(standalone=True)
+status = Status(
+        logfile='/home/curtis/.config/i3/i3pystatus/logs/i3pystatus_monitor2.log',
+        logformat='%(asctime)s $(levelname)s:',
+        standalone=True,
+        )
 
 from colors import *
 
