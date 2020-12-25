@@ -112,13 +112,18 @@ bindsym $mod+r mode "resize"
 
 # Simulate "Show Desktop"
 bindsym $mod+x workspace 15; workspace 16
+
 # Show workspace 1 and 2
 #bindsym $mod+Shift+x workspace 1; workspace 2
 bindsym $mod+Shift+x workspace $w1; workspace $w2
+
 # go to the GIMP
 bindsym $mod+g workspace $w3; exec gimp
+
 # start a terminal
-bindsym $mod+Return exec urxvt256c
+bindsym $mod+Return exec xfce4-terminal
+#bindsym $mod+Return exec urxvt256c
+
 # start screensaver
 bindsym $mod+Shift+s exec xscreensaver-command -activate
 
