@@ -5,7 +5,7 @@ alias dback='python3 /home/curtis/Scripts/DiamondBack/DiamondBack.py'
 # run cd and clear together
 alias cdclear='cd && clear'
 # sync .files for git
-#alias gitSync='python ~/Scripts/gitSync/gitSync.py'
+alias gitSync='python ~/Scripts/gitSync/gitSync.py'
 # make quickbackup of file
 #alias bakupFile='/home/curtis/Scripts/bakupFile.sh'
 
