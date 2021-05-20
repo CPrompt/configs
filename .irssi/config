@@ -6,12 +6,12 @@ servers = (
     port = "6667";
     autoconnect = "yes";
   },
-  # {
-  #    address = "irc.freenode.net";
-  #    chatnet = "i3";
-  #    port = "6667";
-  #    autoconnect = "yes";
-  #  },
+  {
+    address = "irc.libera.chat";
+    chatnet = "LiberaChat";
+    port = "6667";
+    autoconnect = "yes";
+  },
 
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
@@ -48,80 +48,32 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
   };
-  I3WM = { type = "IRC"; max_kicks = "1"; max_msg = "3"; max_whois = "30"; };
-  IRCnet = {
+  LiberaChat = {
     type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
-  EFNet = { 
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
+    max_kicks = "1";
+    max_msgs = "4";
     max_whois = "1";
   };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  OFTC = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  GameSurge = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  WebChat = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  Rizon = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  LinkNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  SILC = { type = "SILC"; };
+  I3WM = { type = "IRC"; max_kicks = "1"; max_msg = "3"; max_whois = "30"; };
   i3 = { type = "IRC"; };
+  IRCnet = { type = "IRC"; };
+  EFNet = { type = "IRC"; };
+  Undernet = { type = "IRC"; };
+  DALnet = { type = "IRC"; };
+  QuakeNet = { type = "IRC"; };
+  OFTC = { type = "IRC"; };
+  GameSurge = { type = "IRC"; };
+  WebChat = { type = "IRC"; };
+  Rizon = { type = "IRC"; };
+  LinkNet = { type = "IRC"; };
+  SILC = { type = "IRC"; };
 };
 
 channels = (
   { name = "oggcastplanet"; chatnet = "freenode"; autojoin = "No"; },
-  { name = "linuxvoice"; chatnet = "freenode"; autojoin = "No"; },
+  { name = "oggcastplanet"; chatnet = "LiberaChat"; autojoin = "No"; },
   { name = "i3"; chatnet = "freenode"; autojoin = "No"; },
-  { name = "uzbl"; chatnet = "freenode"; autojoin = "No"; },
   { name = "fedora"; chatnet = "freenode"; autojoin = "No"; },
-
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; }
 );
 
@@ -349,8 +301,8 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#linuxvoice";
-        tag = "Freenode";
+        name = "#oggcastplanet";
+        tag = "LiberaChat";
       }
     );
   };
