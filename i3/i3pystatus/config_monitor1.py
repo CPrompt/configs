@@ -36,7 +36,6 @@ status.register(
             log_level=10,
             ),
         )
-
 '''
 status.register(
         'weather',

@@ -276,27 +276,38 @@ ignores = (
 );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+
+#2 = {
+#    items = (
+#      {
+#        type = "QUERY";
+#        chat_type = "IRC";
+#        name = "nickserv";
+#        tag = "Freenode";
+#      }
+#    );
+#  };
+#  3 = {
+#    items = (
+#      {
+#        type = "CHANNEL";
+#        chat_type = "IRC";
+#        name = "#oggcastplanet";
+#        tag = "Freenode";
+#      }
+#    );
+#  };
   2 = {
     items = (
       {
         type = "QUERY";
         chat_type = "IRC";
         name = "nickserv";
-        tag = "Freenode";
+        tag = "LiberaChat";
       }
     );
   };
   3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#oggcastplanet";
-        tag = "Freenode";
-      }
-    );
-  };
-  4 = {
     items = (
       {
         type = "CHANNEL";
