@@ -18,6 +18,7 @@ status = Status(
 status.register(
         'weather',
         format='{city}, NC  {icon}{condition}  {current_temp}{temp_unit}   Hi: {high_temp} Lo: {low_temp}',
+        #format='{condition}  {current_temp}{temp_unit}   Hi: {high_temp} Lo: {low_temp}',
         colorize=True,
         color_icons = {
             'Fair': (u'\u263c', '#ffcc00'),

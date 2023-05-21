@@ -392,7 +392,8 @@ exec thunderbird
 #exec urxvt256c -name robin
 #exec urxvt256c -name poison-ivy
 
-exec xfce4-terminal -T wayne-manor --tab -T poison-ivy -e "ssh curtis@poison-ivy" --tab -T robin -e "ssh curtis@robin"
+#exec xfce4-terminal -T wayne-manor --tab -T poison-ivy -e "ssh curtis@poison-ivy" --tab -T robin -e "ssh curtis@robin"
+exec xfce4-terminal -T wayne-manor --tab -T robin -e "ssh curtis@robin"
 
 #-------------------------------------------------------------------------------
 #							Scratchpad
@@ -421,4 +422,4 @@ exec --no-startup-id keepassx
 for_window [class=".*"] title_format "<b>%title</b>"
 for_window [class="(?i)Urxvt" instance="(?)screen"] title_format "<span>wayne-manor</span>"
 for_window [class="(?i)Urxvt" instance="(?)robin"] title_format "<span>robin</span>"
-for_window [class="(?i)Urxvt" instance="(?)poison-ivy"] title_format "<span>poison-ivy</span>"
+#for_window [class="(?i)Urxvt" instance="(?)poison-ivy"] title_format "<span>poison-ivy</span>"

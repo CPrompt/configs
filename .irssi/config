@@ -6,12 +6,6 @@ servers = (
     port = "6667";
     autoconnect = "yes";
   },
-  {
-    address = "irc.libera.chat";
-    chatnet = "LiberaChat";
-    port = "6667";
-    autoconnect = "yes";
-  },
 
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
@@ -38,6 +32,24 @@ servers = (
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
 
+  {
+    address = "irc.libera.chat";
+    chatnet = "LiberaChat";
+    port = "6667";
+    use_tls = "no";
+    tls_verify = "yes";
+    autoconnect = "yes";
+    starttls = "yes";
+  },
+  {
+    address = "irc.libera.chat";
+    chatnet = "LiberaChat";
+    port = "6667";
+    use_tls = "no";
+    tls_verify = "yes";
+    autoconnect = "yes";
+    starttls = "yes";
+  }
 );
 
 chatnets = {
@@ -277,26 +289,26 @@ ignores = (
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
 
-#2 = {
-#    items = (
-#      {
-#        type = "QUERY";
-#        chat_type = "IRC";
-#        name = "nickserv";
-#        tag = "Freenode";
-#      }
-#    );
-#  };
-#  3 = {
-#    items = (
-#      {
-#        type = "CHANNEL";
-#        chat_type = "IRC";
-#        name = "#oggcastplanet";
-#        tag = "Freenode";
-#      }
-#    );
-#  };
+  #2 = {
+  #    items = (
+  #      {
+  #        type = "QUERY";
+  #        chat_type = "IRC";
+  #        name = "nickserv";
+  #        tag = "Freenode";
+  #      }
+  #    );
+  #  };
+  #  3 = {
+  #    items = (
+  #      {
+  #        type = "CHANNEL";
+  #        chat_type = "IRC";
+  #        name = "#oggcastplanet";
+  #        tag = "Freenode";
+  #      }
+  #    );
+  #  };
   2 = {
     items = (
       {

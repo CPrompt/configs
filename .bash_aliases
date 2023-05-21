@@ -16,6 +16,9 @@ alias dmesg="dmesg --color"
 
 alias filebackup="/home/curtis/Scripts/filebackup"
 
+# because speedtest needs to be secure or it fails
+alias speedtest-cli="speedtest-cli --secure"
+
 # make a directory and then cd into it
 mkcd(){
 	mkdir $1 && cd $_
