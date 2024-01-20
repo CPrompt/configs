@@ -19,6 +19,8 @@ alias filebackup="/home/curtis/Scripts/filebackup"
 # because speedtest needs to be secure or it fails
 alias speedtest-cli="speedtest-cli --secure"
 
+alias openterm="xfce4-terminal -T wayne-manor --tab -T robin -e \"ssh curtis@robin\""
+
 # make a directory and then cd into it
 mkcd(){
 	mkdir $1 && cd $_
