@@ -287,7 +287,8 @@ bar {
 		tray_output VGA-0
 
 #		Begin i3pystatus config
-		status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
+#status_command python3 ~/.config/i3/i3pystatus/config_monitor1.py
+        status_command ~/.virtualenvs/i3pystatus/bin/python ~/.config/i3/i3pystatus/config_monitor1.py
 
 #		status_command ~/.config/i3/bumblebee-status/bumblebee-status -m cmus pasink weather -p weather.unit=imperial weather.location=4471025 weather.showminmax=True weather.left-click="firefox --new-tab https://openweathermap.org/city/4471025" -t curtis_gruvbox-powerline
 
@@ -319,7 +320,10 @@ bar {
 	separator_symbol "|"
 		tray_output VGA-0
 #		Begin i3pystatus config
-    	status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
+#status_command python3 ~/.config/i3/i3pystatus/config_monitor2.py
+
+# For some reason, the updates module doesn't like the virtual environment.
+		status_command ~/.virtualenvs/i3pystatus/bin/python ~/.config/i3/i3pystatus/config_monitor2.py
 
 #	    status_command ~/.config/i3/bumblebee-status/bumblebee-status -m taskwarrior nic disk dnf datetime -p dnf.left-click="notify-send 'Test output'"  datetime.left-click="orage" datetime.format="%M/%d/%Y  %H:%M:%S" nic.exclude="enp3s5,lo" nic.format="{ip}" -t curtis_gruvbox-powerline
 #

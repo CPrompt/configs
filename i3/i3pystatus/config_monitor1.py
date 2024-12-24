@@ -1,7 +1,6 @@
 from i3pystatus import Status
 from i3pystatus import get_module
 from i3pystatus.weather import wunderground
-from i3pystatus.weather import weathercom
 import logging
 import subprocess
 
@@ -12,9 +11,7 @@ status = Status(
         logformat='%(asctime)s $(levelname)s:',
         standalone=True,
         )
-
-
-
+'''
 status.register(
         'weather',
         format='{city}, NC  {icon}{condition}  {current_temp}{temp_unit}   Hi: {high_temp} Lo: {low_temp}',
@@ -38,19 +35,31 @@ status.register(
             ),
         )
 '''
+'''
 status.register(
         'weather',
         format='{condition} {current_temp}{temp_unit}[ {icon}][ Hi: {high_temp}][ Lo: {low_temp}][ {update_error}]',
         colorize=True,
         hints={'markup': 'pango'},
         backend=wunderground.Wunderground(
-            location_code='KNCHIGHP59',
+            location_code='27265',
             units='imperial',
             update_error='<span color="#ff0000">!</span>',
-        ),
-    )
+            ),
+        )
 '''
 
+status.register(
+    'weather',
+    format='{condition} {current_temp}{temp_unit}[ {icon}][ Hi: {high_temp}][ Lo: {low_temp}][ {update_error}]',
+    colorize=True,
+    hints={'markup': 'pango'},
+    backend=wunderground.Wunderground(
+        location_code='KNCHIGHP109',
+        units='imperial',
+        update_error='<span color="#ff0000">!</span>',
+    ),
+)
 
 status.register("pulseaudio",
         color_unmuted = pulse_audio,

@@ -2,6 +2,9 @@ from i3pystatus import Status
 from i3pystatus import get_module
 from i3pystatus.updates import dnf
 import subprocess
+import logging
+
+from colors import *
 
 
 status = Status(
@@ -10,7 +13,6 @@ status = Status(
         standalone=True,
         )
 
-from colors import *
 
 # Displays clock like this:
 status.register("clock",
@@ -36,6 +38,7 @@ status.register("updates",
                         format_working = "Working...",
                         notification_icon = "software-update-available",
                         backends = [dnf.Dnf()],)
+
 # Shows disk usage of /home/curtis/
 status.register("disk",
                         path="/home/curtis/",
