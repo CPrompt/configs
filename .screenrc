@@ -18,7 +18,8 @@ screen	-t	vim	0	vim
 #screen	-t	xonsh	1	xonsh
 screen	-t	bash	1   bash
 screen  -t  ranger  2   ranger
-screen	-t	htop	3	htop
+#screen	-t	htop	3	htop
+screen	-t	btop	3	btop
 screen  -t	cmus	4	cmus
 screen  -t	irssi 	5	irssi
 #screen  -t  robin.gotham	6 ssh curtis@robin	
@@ -40,6 +41,5 @@ defbce "on"
 hardstatus	on
 # hardstatus alwayslastline '%{= m}%H %= %{= w}%-w%{+b R}[%n %t]%{-}%+w %= %{Kc}%D %m/%d/%y %{g}%C%a '
 hardstatus alwayslastline '%{= m}%H %= %{= w}%-w%{+b R}[%n %t]%{-}%+w %= %{c}%D %m/%d/%y %{g}%C%a '
-
 
 

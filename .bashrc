@@ -17,6 +17,15 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+if [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+fi
+
+# load user-level completions
+for bcfile in ~/.local/share/bash-completion/*; do
+	[ -f "$bcfile" ] && . "$bcfile"
+done
+
 # If not running interactively, don't do anything!
 [[ $- != *i* ]] && return
 
@@ -35,6 +44,10 @@ case ${TERM} in
 		#trap 'echo -ne "\e]0;WAYNE-MANOR\007"' DEBUG
 		;;
 	screen)
+		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
+		#trap 'echo -ne "\e]0;WAYNE-MANOR SCREEN\007"' DEBUG
+		;;
+	tmux)
 		PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf "\033_%s@%s:%s\033\\" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/~}"'
 		#trap 'echo -ne "\e]0;WAYNE-MANOR SCREEN\007"' DEBUG
 		;;

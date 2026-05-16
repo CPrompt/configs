@@ -4,6 +4,9 @@
 alias dback='python3 /home/curtis/Scripts/DiamondBack/DiamondBack.py'
 # run cd and clear together
 alias cdclear='cd && clear'
+# run moveTorrent script
+#alias moveTorrent="python3 /home/curtis/Scripts/move_torrents/moveTorrent.py"
+
 # sync .files for git
 #alias gitSync='python3 ~/Scripts/gitSync/gitSync.py'
 # make quickbackup of file
