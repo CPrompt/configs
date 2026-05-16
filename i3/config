@@ -217,7 +217,9 @@ assign [class="URxvt" instance="screen"] $w2
 assign [class="xfce4-terminal"] $w2
 assign [class="Cherrytree"] $w4
 #assign [class="Notekit" instance="notekit"] $w4
+
 assign [class="kmymoney"] $w2
+
 # Was testing making a new instance of FF
 # You can do this but have to:
 #	1. make a new Profile to use
@@ -333,7 +335,7 @@ bar {
 # testing bumblebee modules
 #	    status_command ~/.config/i3/bumblebee-status/bumblebee-status -m dnf2
 		position bottom
-		workspace_buttons yes
+		workspace_buttons yes 
 		output HDMI-0
 #		End i3pystatus config
 
@@ -356,6 +358,10 @@ bar {
 #exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Walls/Time_of_Day/1-Early_Morning.png
 exec --no-startup-id "python3 ~/Scripts/pyTimeWall/pyTimeWall.py"
 
+#-------------------------------------------------------------------------------
+#								TMux
+#-------------------------------------------------------------------------------
+exec --no-startup-id tmux-start
 #-------------------------------------------------------------------------------
 #								Screensaver
 #-------------------------------------------------------------------------------
@@ -384,10 +390,10 @@ exec --no-startup-id "xmodmap -e 'pointer = 3 2 1'"
 
 # Workspace 1 applications
 #exec google-chrome --class="Google-chrome"
-#exec vivaldi -class="vivaldi"
+exec vivaldi-stable -class="vivaldi-stable"
 #exec opera
 #exec qutebrowser
-exec firefox -new-instance -P "default" --class="browser"
+#exec firefox -new-instance -P "default" --class="browser"
 exec thunderbird
 #exec notekit
 #exec cherrytree
@@ -399,12 +405,17 @@ exec thunderbird
 #exec xfce4-terminal -T wayne-manor --tab -T poison-ivy -e "ssh curtis@poison-ivy" --tab -T robin -e "ssh curtis@robin"
 exec xfce4-terminal -T wayne-manor --tab -T robin -e "ssh curtis@robin"
 
+#----- see if we can get ssh-agent to start and add robin key automatically
+exec ssh-add ~/.ssh/robin
+
 #-------------------------------------------------------------------------------
 #							Scratchpad
 #-------------------------------------------------------------------------------
 
 # This binds mod+shift+alt+1 to show keepass
 bindsym $mod+Shift+Mod1+1 [con_mark="secret"] scratchpad show
+#bindsym $mod+Shift+t [con_mark="secret"] scratchpad show
+#bindsym $mod+Mod1+1 [con_mark="secret"] scratchpad show
 for_window [class="Keepassx$"] mark "secret", move scratchpad
 exec --no-startup-id keepassx
 

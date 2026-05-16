@@ -15,4 +15,4 @@ My Collection of required config files
 - irssi
 - molokai theme for vim and vim-airline
 - geany
-
+- tmux
