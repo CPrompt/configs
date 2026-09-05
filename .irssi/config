@@ -33,6 +33,13 @@ servers = (
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
 
   {
+    address = "libera";
+    port = "0";
+    password = "-ssl";
+    use_tls = "no";
+    tls_verify = "yes";
+  },
+  {
     address = "irc.libera.chat";
     chatnet = "LiberaChat";
     port = "6667";

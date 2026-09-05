@@ -11,6 +11,7 @@ status = Status(
         logformat='%(asctime)s $(levelname)s:',
         standalone=True,
         )
+
 '''
 status.register(
         'weather',
@@ -35,6 +36,7 @@ status.register(
             ),
         )
 '''
+
 '''
 status.register(
         'weather',
@@ -49,6 +51,7 @@ status.register(
         )
 '''
 
+
 status.register(
     'weather',
     format='{condition} {current_temp}{temp_unit}[ {icon}][ Hi: {high_temp}][ Lo: {low_temp}][ {update_error}]',
@@ -61,8 +64,9 @@ status.register(
     ),
 )
 
+
 status.register("moon",
-                format = "{status}  {moonicon}",
+                format = "{status} {moonicon}",
                 color={
                     "New Moon":color_disk,
                     "Waxing Crescent":color_disk,
@@ -74,6 +78,7 @@ status.register("moon",
                     "Waning Crescent":color_disk
                     }
                 )
+
 '''
 status.register("pulseaudio",
         color_unmuted = pulse_audio,
