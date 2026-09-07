@@ -15,6 +15,7 @@ status = Status(
 
 
 # Displays clock like this:
+'''
 status.register("clock",
                         #  Note: this config requires the gsimplecal package to be installed
                         hints = {"markup": "pango"},
@@ -25,6 +26,7 @@ status.register("clock",
                         color = color_clock,
                         #on_leftclick = ["gsimplecal"],)
                         on_leftclick = ["orage"],)
+'''
 
 # Display updates
 status.register("updates",

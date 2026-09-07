@@ -1,6 +1,7 @@
 from i3pystatus import Status
 from i3pystatus import get_module
-from i3pystatus.weather import wunderground
+#from i3pystatus.weather import wunderground
+from i3pystatus.weather import weathercom
 import logging
 import subprocess
 
@@ -36,22 +37,36 @@ status.register(
             ),
         )
 '''
-
+'''
+status.register(
+        'weather',
+        format='{condition}  {current_temp}{temp_unit}   Hi: {high_temp} Lo: {low_temp}',
+        interval=900,
+        colorize=True,
+        hints={'markup': 'pango'},
+        backend=weathercom.Weathercom(
+            location_code='9bdb8423644be2c9fd8d98cc4a8518d5044f5bdef19504710b5c7dab4ee066da',
+            units='imperial',
+            update_error='<span color="#ff0000">!</span>',
+            ),
+        )
+'''
 '''
 status.register(
         'weather',
         format='{condition} {current_temp}{temp_unit}[ {icon}][ Hi: {high_temp}][ Lo: {low_temp}][ {update_error}]',
+        interval=9000,
         colorize=True,
         hints={'markup': 'pango'},
-        backend=wunderground.Wunderground(
-            location_code='27265',
+        backend=weathercom.Weathercom(
+            location_code='USNC0314:1:US',
             units='imperial',
             update_error='<span color="#ff0000">!</span>',
             ),
         )
 '''
 
-
+'''
 status.register(
     'weather',
     format='{condition} {current_temp}{temp_unit}[ {icon}][ Hi: {high_temp}][ Lo: {low_temp}][ {update_error}]',
@@ -63,22 +78,7 @@ status.register(
         update_error='<span color="#ff0000">!</span>',
     ),
 )
-
-
-status.register("moon",
-                format = "{status} {moonicon}",
-                color={
-                    "New Moon":color_disk,
-                    "Waxing Crescent":color_disk,
-                    "First Quarter":color_disk,
-                    "Waxing Gibbous":color_disk,
-                    "Full Moon":color_disk,
-                    "Waning Gibbous":color_disk,
-                    "Last Quarter":color_disk,
-                    "Waning Crescent":color_disk
-                    }
-                )
-
+'''
 '''
 status.register("pulseaudio",
         color_unmuted = pulse_audio,
@@ -102,5 +102,33 @@ status.register("cmus",
         interval = 1,
         log_level=10,
         )
-'''                
+'''
+
+# Displays clock like this:
+status.register("clock",
+                        #  Note: this config requires the gsimplecal package to be installed
+                        hints = {"markup": "pango"},
+                        format = " %a %d %b <span color=\"#ebdbb2\">  </span>  %H:%M:%S %P <span color=\"#ebdbb2\"> </span> ",
+                        #    format = "(' %a %d %b ', America/New_York)",
+                        #color = "#b16286",
+                        #color = "#5f87af",
+                        color = color_clock,
+                        #on_leftclick = ["gsimplecal"],)
+                        on_leftclick = ["orage"],)
+
+status.register("moon",
+                format = "{status} {moonicon}",
+                color={
+                    "New Moon":color_disk,
+                    "Waxing Crescent":color_disk,
+                    "First Quarter":color_disk,
+                    "Waxing Gibbous":color_disk,
+                    "Full Moon":color_disk,
+                    "Waning Gibbous":color_disk,
+                    "Last Quarter":color_disk,
+                    "Waning Crescent":color_disk
+                    }
+                )
+
+
 status.run()
